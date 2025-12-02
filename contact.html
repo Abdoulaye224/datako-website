@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - DataKö</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="data/logo.png" alt="DataKö Logo">
+            </a>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li class="nav-item"><a href="prestations.html" class="nav-link">Prestations</a></li>
+                    <li class="nav-item"><a href="formations.html" class="nav-link">Formations</a></li>
+                    <li class="nav-item"><a href="matching.html" class="nav-link">Matching</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-tag">Contact</span>
+                <h1>Parlons de votre projet</h1>
+                <p>Vous avez un défi data à relever ? Une question sur nos formations ? Notre équipe est à votre écoute.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Info -->
+    <section class="section">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px;">
+
+                <!-- Form -->
+                <div>
+                    <h2 style="margin-bottom: 30px;">Envoyez-nous un message</h2>
+                    <form style="display: flex; flex-direction: column; gap: 20px;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <input type="text" placeholder="Prénom"
+                                style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: white;">
+                            <input type="text" placeholder="Nom"
+                                style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: white;">
+                        </div>
+                        <input type="email" placeholder="Email professionnel"
+                            style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: white;">
+                        <select
+                            style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: white;">
+                            <option value="" disabled selected>Sujet de votre demande</option>
+                            <option value="consulting" style="color: black;">Consulting & Projets</option>
+                            <option value="formation" style="color: black;">Formation</option>
+                            <option value="recrutement" style="color: black;">Recrutement / Partenariat</option>
+                            <option value="autre" style="color: black;">Autre</option>
+                        </select>
+                        <textarea rows="5" placeholder="Votre message"
+                            style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: white;"></textarea>
+                        <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                    </form>
+                </div>
+
+                <!-- Info -->
+                <div>
+                    <h2 style="margin-bottom: 30px;">Nos Bureaux</h2>
+
+                    <div style="margin-bottom: 40px;">
+                        <h3 style="color: var(--accent-blue); font-size: 1.4rem;">Guinée</h3>
+                        <p>Conakry, Guinée<br>Afrique de l'Ouest</p>
+                    </div>
+
+                    <div style="margin-bottom: 40px;">
+                        <h3 style="color: var(--accent-violet); font-size: 1.4rem;">France</h3>
+                        <p>Paris, France<br>Europe</p>
+                    </div>
+
+                    <div>
+                        <h3 style="font-size: 1.4rem;">Email</h3>
+                        <p><a href="mailto:contact@datako.ai" style="color: white;">contact@datako.ai</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="data/logo.png" alt="DataKö" style="height: 30px; margin-bottom: 20px;">
+                    <p>Cabinet de consulting Data & IA.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="prestations.html">Prestations</a></li>
+                        <li><a href="formations.html">Formations</a></li>
+                        <li><a href="matching.html">Matching</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contact@datako.ai">contact@datako.ai</a></li>
+                        <li>Guinée & France</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 DataKö. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

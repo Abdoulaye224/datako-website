@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - DataKö</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="data/logo.png" alt="DataKö Logo">
+            </a>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li class="nav-item"><a href="prestations.html" class="nav-link">Prestations</a></li>
+                    <li class="nav-item"><a href="formations.html" class="nav-link">Formations</a></li>
+                    <li class="nav-item"><a href="matching.html" class="nav-link">Matching</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-tag">Actualités</span>
+                <h1>Insights & Veille</h1>
+                <p>Découvrez nos derniers articles sur l'intelligence artificielle, la data science et les tendances
+                    technologiques.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Grid -->
+    <section class="section">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <!-- Article 1 -->
+                <article
+                    style="background: var(--bg-secondary); border-radius: 8px; overflow: hidden; transition: transform 0.3s ease;">
+                    <div style="height: 200px; background: rgba(255,255,255,0.1);"></div>
+                    <div style="padding: 25px;">
+                        <span style="font-size: 0.8rem; color: var(--accent-blue);">IA & Business</span>
+                        <h3 style="font-size: 1.2rem; margin: 10px 0;">L'impact de l'IA générative sur les PME</h3>
+                        <p style="font-size: 0.9rem;">Comment les petites entreprises peuvent tirer parti des nouveaux
+                            outils d'IA pour gagner en productivité.</p>
+                        <a href="#" style="color: var(--accent-violet); font-weight: 600; font-size: 0.9rem;">Lire la
+                            suite →</a>
+                    </div>
+                </article>
+                <!-- Article 2 -->
+                <article
+                    style="background: var(--bg-secondary); border-radius: 8px; overflow: hidden; transition: transform 0.3s ease;">
+                    <div style="height: 200px; background: rgba(255,255,255,0.1);"></div>
+                    <div style="padding: 25px;">
+                        <span style="font-size: 0.8rem; color: var(--accent-blue);">Data Engineering</span>
+                        <h3 style="font-size: 1.2rem; margin: 10px 0;">Modern Data Stack : Par où commencer ?</h3>
+                        <p style="font-size: 0.9rem;">Guide complet pour moderniser votre infrastructure de données en
+                            2025.</p>
+                        <a href="#" style="color: var(--accent-violet); font-weight: 600; font-size: 0.9rem;">Lire la
+                            suite →</a>
+                    </div>
+                </article>
+                <!-- Article 3 -->
+                <article
+                    style="background: var(--bg-secondary); border-radius: 8px; overflow: hidden; transition: transform 0.3s ease;">
+                    <div style="height: 200px; background: rgba(255,255,255,0.1);"></div>
+                    <div style="padding: 25px;">
+                        <span style="font-size: 0.8rem; color: var(--accent-blue);">Formation</span>
+                        <h3 style="font-size: 1.2rem; margin: 10px 0;">Retour sur notre dernier bootcamp</h3>
+                        <p style="font-size: 0.9rem;">Témoignages des participants de la promotion Data Analyst 2024.
+                        </p>
+                        <a href="#" style="color: var(--accent-violet); font-weight: 600; font-size: 0.9rem;">Lire la
+                            suite →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="data/logo.png" alt="DataKö" style="height: 30px; margin-bottom: 20px;">
+                    <p>Cabinet de consulting Data & IA.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="prestations.html">Prestations</a></li>
+                        <li><a href="formations.html">Formations</a></li>
+                        <li><a href="matching.html">Matching</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contact@datako.ai">contact@datako.ai</a></li>
+                        <li>Guinée & France</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 DataKö. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Button -->
+    <a href="contact.html" class="floating-btn">
+        Soumettre votre projet
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
