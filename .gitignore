@@ -1,0 +1,29 @@
+# OS / système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Cache & temporaires
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Editor / IDE
+.vscode/
+.idea/
+*.iml
+
+# Build / Preview (si un jour tu utilises un bundler)
+dist/
+build/
+
+# Fichiers générés automatiquement par IA ou outils
+*.backup
+*.bak
+
+# Uploads internes d'Antigravity
+data/*.tmp
