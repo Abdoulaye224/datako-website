@@ -9,7 +9,6 @@
         radial-gradient(circle at bottom right, rgba(122, 92, 255, 0.22), transparent 60%),
         var(--bg-primary);
     min-height: 85vh;
-    /* Fixed missing unit */
     padding-top: calc(var(--header-height) + 40px);
     padding-bottom: 60px;
 
@@ -21,12 +20,18 @@
     /* Prevent spillover */
 }
 
+/* Widen the container specifically for Hero to reduce empty space */
+.hero-home .container {
+    max-width: 1400px;
+    width: 100%;
+}
+
 /* Layout Container */
 .hero-layout {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 60px;
+    gap: 80px;
     /* Balanced spacing */
     position: relative;
     z-index: 1;
@@ -37,7 +42,8 @@
    ========================================= */
 .hero-content {
     flex: 1;
-    max-width: 600px;
+    max-width: 520px;
+    /* Increased slightly for balance */
 }
 
 .hero-tag {
@@ -55,7 +61,7 @@
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
     /* Responsive typography */
     line-height: 1.1;
     margin-bottom: 24px;
@@ -63,11 +69,16 @@
     color: #fff;
 }
 
+.hero h1,
+.hero-title {
+    font-size: 3.2rem;
+}
+
 .hero-text {
     font-size: 1.125rem;
     line-height: 1.6;
     color: var(--text-secondary);
-    max-width: 520px;
+    max-width: 580px;
     margin-bottom: 40px;
 }
 
@@ -81,13 +92,14 @@
    Hero Visual (Right)
    ========================================= */
 .hero-visual {
-    flex: 1;
+    flex: 1.2;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     position: relative;
-    max-width: 720px;
-    margin-top: 20px;
+    max-width: 960px;
+    /* Increased to fill more space */
+    margin-top: 0;
 }
 
 /* Glow Effect behind image */
@@ -108,6 +120,7 @@
 .hero-img {
     width: 100%;
     height: auto;
+    /* Allow full width of container */
     max-width: 100%;
     border-radius: 20px;
     box-shadow:
@@ -142,45 +155,101 @@
 /* =========================================
    Responsive Design
    ========================================= */
-@media (max-width: 992px) {
-    .hero-home {
-        min-height: auto;
-        padding-top: calc(var(--header-height) + 60px);
+/* Écrans moyens : laptop 13–16" environ */
+@media (max-width: 1400px) and (min-width: 993px) {
+    .hero-home .container {
+        max-width: 1200px;
+        /* Rétrécit la zone centrale */
     }
 
     .hero-layout {
-        flex-direction: column-reverse;
-        /* Text bottom, Image top */
-        text-align: center;
-        gap: 48px;
+        gap: 40px;
+        /* Moins d’espace entre texte & image */
+        justify-content: center;
     }
 
     .hero-content {
-        max-width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        max-width: 540px;
+    }
+
+    .hero-visual {
+        max-width: 520px;
+        /* Image un peu moins large -> rapproche tout */
+    }
+
+    .hero-title {
+        font-size: 2.6rem;
+        /* Légèrement plus petit, plus confortable */
     }
 
     .hero-text {
-        margin-left: auto;
-        margin-right: auto;
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 992px) {
+    .hero-home {
+        min-height: auto;
+        padding-top: calc(var(--header-height) + 20px);
+        padding-bottom: 40px;
     }
 
-    .hero-buttons {
-        justify-content: center;
+    .hero-home .container {
+        max-width: 100%;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .hero-layout {
+        flex-direction: column;
+        /* Text first, Image second */
+        text-align: center;
+        gap: 24px;
+    }
+
+    .hero-content {
+        max-width: 480px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        order: 1;
+        /* Explicit order just in case */
     }
 
     .hero-visual {
         justify-content: center;
         width: 100%;
-        max-width: 500px;
+        max-width: 320px;
+        /* Slight reduction */
+        margin: 0 auto;
+        order: 2;
+        /* Image after text */
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+        /* Smaller */
+        margin-bottom: 12px;
+    }
+
+    .hero-text {
+        font-size: 0.9rem;
+        /* Smaller */
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 24px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        gap: 12px;
     }
 }
 
 @media (max-width: 576px) {
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 
     .hero-buttons {
@@ -194,7 +263,112 @@
     }
 }
 
-/* Intro Section */
+/* =========================================
+   Expertise Section
+   ========================================= */
+.section-expertise {
+    position: relative;
+    background:
+        radial-gradient(circle at center top, rgba(58, 122, 254, 0.08), transparent 70%),
+        var(--bg-secondary);
+    padding-bottom: 100px;
+}
+
+.expertise-content {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.expertise-intro {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.expertise-list {
+    text-align: left;
+    display: inline-block;
+    /* Allows list to be centered while items are left-aligned */
+    margin: 0 auto;
+}
+
+.expertise-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+}
+
+.expertise-list strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+.icon-check {
+    color: var(--accent-violet);
+    background: rgba(122, 92, 255, 0.1);
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Image Card */
+.expertise-visual {
+    position: relative;
+    max-width: 840px;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 10px;
+    /* Small "frame" effect or spacing */
+}
+
+.expertise-card-glow {
+    position: absolute;
+    inset: 50px;
+    background: radial-gradient(circle, rgba(122, 92, 255, 0.4), transparent 70%);
+    filter: blur(50px);
+    z-index: 0;
+    opacity: 0.6;
+}
+
+.expertise-img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.08);
+    /* Subtle border */
+    transition: transform 0.3s ease;
+}
+
+.expertise-visual:hover .expertise-img {
+    transform: translateY(-4px);
+}
+
+/* Responsive Expertise */
+@media (max-width: 768px) {
+    .expertise-list li {
+        font-size: 0.95rem;
+    }
+
+    .expertise-intro {
+        font-size: 1rem;
+    }
+}
+
+/* Intro Section (Deprecated/Removed, keeping styles if needed somewhere else or cleanup) */
 .section-intro {
     position: relative;
 }
@@ -346,30 +520,4 @@
 
 .animate-fade-up.delay-3 {
     animation-delay: 0.36s;
-}
-
-/* Responsive */
-/* Responsive */
-@media (max-width: 992px) {
-    .hero-home {
-        padding-top: calc(var(--header-height) + 40px);
-        padding-bottom: 60px;
-    }
-
-    .hero-layout {
-        flex-direction: column-reverse;
-        gap: 40px;
-    }
-
-    .hero-visual {
-        flex: 0 0 auto;
-        width: 100%;
-        max-width: 460px;
-        margin: 0 auto;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: flex-start;
-    }
 }
