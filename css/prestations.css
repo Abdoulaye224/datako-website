@@ -1,0 +1,570 @@
+/* =========================================
+   Prestations Page - Dedicated Styles
+   Prefix: .prest-
+   ========================================= */
+
+/* Hero Specifics */
+.prest-hero {
+    padding-top: calc(var(--header-height) + 60px);
+    padding-bottom: 80px;
+    background:
+        radial-gradient(circle at top right, rgba(58, 122, 254, 0.15), transparent 45%),
+        var(--bg-primary);
+    text-align: center;
+}
+
+.prest-hero h1 {
+    margin-bottom: 24px;
+}
+
+.prest-hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Separator between Hero and Approach */
+.prest-separator {
+    height: 120px;
+    /* ~100-140px range */
+    background: linear-gradient(to bottom, var(--bg-primary), #021a21);
+    /* Dark to slightly darker */
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    margin-bottom: -1px;
+    /* Ensure seamless merge */
+}
+
+.prest-separator::after {
+    /* Optional thin divider line in the middle */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
+
+/* Approach Section (Refined 2-column) */
+.prest-approach {
+    padding: 100px 0 120px;
+    /* Deeper/Matte background */
+    background: #021a21;
+    border-top: none;
+    /* Handled by separator */
+    position: relative;
+}
+
+/* Hero Animations */
+@keyframes prestFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+        /* Reduced movement 8-10px */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.prest-anim-tag {
+    opacity: 0;
+    animation: prestFadeUp 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+    /* Slightly longer delay */
+}
+
+.prest-anim-title {
+    opacity: 0;
+    animation: prestFadeUp 0.8s ease-out forwards;
+    animation-delay: 0.1s;
+}
+
+.prest-anim-subtitle {
+    opacity: 0;
+    animation: prestFadeUp 0.8s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .prest-anim-tag,
+    .prest-anim-title,
+    .prest-anim-subtitle {
+        animation: none;
+        opacity: 1;
+    }
+}
+
+.prest-approach-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.prest-approach-text-col {
+    text-align: left;
+}
+
+.prest-approach-text-col h2 {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+}
+
+.prest-approach-desc {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+/* Right Column: Principles list */
+.prest-approach-principles {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-left: 40px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.prest-principle {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.prest-principle-number {
+    font-family: monospace;
+    color: var(--accent-violet);
+    font-weight: bold;
+    font-size: 1.1rem;
+    background: rgba(122, 92, 255, 0.1);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.prest-principle p {
+    margin: 0;
+    font-weight: 500;
+    color: #fff;
+    font-size: 1.05rem;
+}
+
+/* Responsive Approach */
+@media (max-width: 992px) {
+    .prest-approach-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .prest-approach-principles {
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 30px;
+    }
+}
+
+/* Pillars Section */
+.prest-pillars-section {
+    padding: 100px 0;
+    background: var(--bg-secondary);
+}
+
+.prest-pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.prest-pillar-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius);
+    padding: 40px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.prest-pillar-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(58, 122, 254, 0.3);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.prest-pillar-icon {
+    font-size: 2rem;
+    margin-bottom: 24px;
+    display: inline-block;
+    color: var(--accent-blue);
+}
+
+.prest-pillar-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+    color: #fff;
+}
+
+.prest-pillar-desc {
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+    color: var(--text-secondary);
+    min-height: 60px;
+    /* Aligns content roughly */
+}
+
+/* List of bullet points */
+.prest-list {
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 24px;
+}
+
+.prest-list li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.prest-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent-violet);
+    font-weight: bold;
+}
+
+/* Expertise Grid (6 Cards) */
+/* Expertise Grid (5 Cards - Flex Layout for Centering) */
+.prest-expertise-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.prest-expertise-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius);
+    padding: 40px;
+    /* Restored larger padding */
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    /* Calculated width for 3 columns with 30px gap */
+    width: calc(33.333% - 20px);
+}
+
+.prest-expertise-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(58, 122, 254, 0.3);
+    /* Restored original hover opacity */
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.prest-expertise-icon {
+    font-size: 2rem;
+    margin-bottom: 24px;
+    /* Restored spacing */
+    color: var(--accent-blue);
+    /* Simple text icon */
+}
+
+.prest-expertise-card h3 {
+    font-size: 1.6rem;
+    /* Restored larger font */
+    margin-bottom: 16px;
+    /* Restored spacing */
+    color: #fff;
+    font-weight: 600;
+}
+
+.prest-expertise-card p {
+    font-size: 1.05rem;
+    /* Restored larger text */
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Card Separator */
+.prest-card-sep {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 20px 0;
+    width: 60px;
+    /* Subtle width, not full width */
+}
+
+/* Card Bullet List */
+.prest-card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.prest-card-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.prest-card-list li:last-child {
+    margin-bottom: 0;
+}
+
+.prest-card-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent-violet);
+    /* Using violet accent for bullets */
+    font-weight: bold;
+}
+
+/* Responsive Expertise Grid */
+/* Responsive Expertise Grid */
+@media (max-width: 992px) {
+    .prest-expertise-card {
+        width: calc(50% - 15px);
+        /* 2 per row */
+    }
+}
+
+@media (max-width: 576px) {
+    .prest-expertise-card {
+        width: 100%;
+        /* 1 per row */
+    }
+}
+
+/* Deliverables Tag - Deprecated for specific items but keeping style just in case */
+.prest-deliverables {
+    margin-top: 24px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+}
+
+/* Bridge Section (Matching / Formation) */
+.prest-bridge-section {
+    padding: 100px 0;
+}
+
+.prest-bridge-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.prest-bridge-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+    border-radius: var(--border-radius);
+    position: relative;
+    overflow: hidden;
+    /* Soft gradient background */
+    background: linear-gradient(145deg, rgba(3, 46, 58, 0.9), rgba(5, 49, 61, 1));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.prest-bridge-card::before {
+    /* Top accent line highlight */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-blue), transparent);
+    opacity: 0.7;
+}
+
+.prest-bridge-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25), 0 0 20px rgba(58, 122, 254, 0.1);
+    /* Soft glow */
+    border-color: rgba(58, 122, 254, 0.3);
+}
+
+.prest-bridge-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+    color: #fff;
+}
+
+.prest-bridge-card p {
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+    max-width: 90%;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.prest-link-arrow {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    color: var(--accent-blue);
+    gap: 8px;
+    transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.prest-link-arrow:hover {
+    color: #fff;
+    /* Brighter on hover */
+    gap: 12px;
+}
+
+/* CTA Section Enhancements */
+.prest-cta {
+    text-align: center;
+    padding: 100px 0 140px;
+    /* Subtle distinct background */
+    background: radial-gradient(circle at bottom center, rgba(58, 122, 254, 0.08), transparent 60%), #011218;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    position: relative;
+    background-clip: padding-box;
+}
+
+.prest-cta h2 {
+    font-size: 3rem;
+    margin-bottom: 24px;
+    /* Stronger visual hierarchy */
+    background: linear-gradient(180deg, #fff, rgba(255, 255, 255, 0.8));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.prest-cta p {
+    font-size: 1.3rem;
+    margin-bottom: 50px;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Enhanced CTA Button */
+.prest-cta .btn-primary {
+    padding: 18px 40px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-violet));
+    box-shadow: 0 4px 15px rgba(58, 122, 254, 0.3);
+    transition: all 0.3s ease;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    /* Space between icon and text */
+}
+
+.prest-cta .btn-primary .btn-icon {
+    transition: transform 0.3s ease;
+}
+
+.prest-cta .btn-primary:hover,
+.prest-cta .btn-primary:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(58, 122, 254, 0.5);
+    filter: brightness(1.1);
+}
+
+.prest-cta .btn-primary:hover .btn-icon {
+    transform: translateX(-3px) translateY(-1px) rotate(-5deg);
+    /* Subtle playful movement */
+}
+
+/* Responsive adjustments for Bridge and Hero */
+@media (max-width: 992px) {
+    .prest-bridge-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .prest-hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-container {
+    background: #021a21;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    border-radius: var(--border-radius);
+    padding: 40px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    transform: scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-overlay.active .modal-container {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    line-height: 1;
+    padding: 5px;
+}
+
+.modal-close:hover {
+    color: #fff;
+}
+
+/* Prevent body scroll when modal is open */
+body.no-scroll {
+    overflow: hidden;
+}
