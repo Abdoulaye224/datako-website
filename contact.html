@@ -57,28 +57,9 @@
                 <!-- Form -->
                 <div>
                     <h2 style="margin-bottom: 30px;">Envoyez-nous un message</h2>
-                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contactForm"
-                        style="display: flex; flex-direction: column; gap: 20px;">
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                            <input type="text" id="prenom" name="prenom" placeholder="Prénom"
-                                style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: white;">
-                            <input type="text" id="nom" name="nom" placeholder="Nom"
-                                style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: white;">
-                        </div>
-                        <input type="email" id="email" name="email" placeholder="Email professionnel"
-                            style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: white;">
-                        <select id="sujet" name="sujet"
-                            style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: white;">
-                            <option value="" disabled selected>Sujet de votre demande</option>
-                            <option value="consulting" style="color: black;">Consulting & Projets</option>
-                            <option value="formation" style="color: black;">Formation</option>
-                            <option value="recrutement" style="color: black;">Recrutement / Partenariat</option>
-                            <option value="autre" style="color: black;">Autre</option>
-                        </select>
-                        <textarea id="message" name="message" rows="5" placeholder="Votre message"
-                            style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: white;"></textarea>
-                        <button type="submit" class="btn btn-primary">Envoyer le message</button>
-                    </form>
+                    <div id="contact-form-container">
+                        <!-- Form injected by JS -->
+                    </div>
                 </div>
 
                 <!-- Info -->

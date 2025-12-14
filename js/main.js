@@ -83,4 +83,33 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    // Shared Contact Form Component (Single Source of Truth)
+    const formContainer = document.getElementById('contact-form-container');
+    if (formContainer) {
+        const contactFormHTML = `
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contactForm"
+                style="display: flex; flex-direction: column; gap: 20px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <input type="text" id="prenom" name="prenom" placeholder="Prénom" required
+                        style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: white;">
+                    <input type="text" id="nom" name="nom" placeholder="Nom" required
+                        style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: white;">
+                </div>
+                <input type="email" id="email" name="email" placeholder="Email professionnel" required
+                    style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: white;">
+                <select id="sujet" name="sujet" required
+                    style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: white;">
+                    <option value="" disabled selected>Sujet de votre demande</option>
+                    <option value="consulting" style="color: black;">Consulting & Projets</option>
+                    <option value="formation" style="color: black;">Formation</option>
+                    <option value="recrutement" style="color: black;">Recrutement / Partenariat</option>
+                    <option value="autre" style="color: black;">Autre</option>
+                </select>
+                <textarea id="message" name="message" rows="5" placeholder="Votre message" required
+                    style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: white;"></textarea>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Envoyer le message</button>
+            </form>
+        `;
+        formContainer.innerHTML = contactFormHTML;
+    }
 });
