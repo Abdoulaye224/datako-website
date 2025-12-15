@@ -40,7 +40,8 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero Section -->
+    <section class="hero match-hero">
         <div class="container">
             <div class="hero-content">
                 <span class="hero-tag">Talents</span>
@@ -87,7 +88,7 @@
                 <div class="matching-img-container" style="flex: 1; min-width: 300px;">
                     <img src="images/matching_entreprises.png" alt="Matching DataKö - Entreprises" class="matching-img">
                 </div>
-                <div style="flex: 1; min-width: 300px;">
+                <div class="matching-ent-text" style="flex: 1; min-width: 300px;">
                     <h2>Pour les Entreprises</h2>
                     <p>Accédez à un vivier de consultants qualifiés et pré-sélectionnés par nos soins. Que ce soit pour
                         une mission ponctuelle ou un projet de longue durée, nous trouvons le profil qui correspond à
@@ -182,13 +183,13 @@
     </section>
 
     <!-- For Consultants -->
-    <section class="section">
+    <section class="section matching-consultants">
         <div class="container">
-            <div style="display: flex; flex-wrap: wrap-reverse; align-items: center; gap: 40px;">
-                <div
-                    style="flex: 1; min-width: 300px; height: 300px; background: rgba(255,255,255,0.05); border-radius: 8px;">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
+                <div class="matching-img-container">
+                    <img src="images/matching_entreprises.png" alt="Matching DataKö - Consultants" class="matching-img">
                 </div>
-                <div style="flex: 1; min-width: 300px;">
+                <div class="matching-ent-text" style="flex: 1; min-width: 300px;">
                     <h2>Pour les Consultants</h2>
                     <p>Rejoignez notre réseau d'experts et accédez à des missions stimulantes chez des clients
                         prestigieux. Nous vous accompagnons dans votre développement professionnel.</p>
@@ -230,9 +231,9 @@
     </footer>
 
     <!-- Floating Button -->
-    <a href="contact.html" class="floating-btn">
+    <button class="floating-btn" data-open-modal="projectModal">
         Soumettre votre projet
-    </a>
+    </button>
 
     <!-- Modal -->
     <div id="projectModal" class="modal-overlay" aria-hidden="true">
