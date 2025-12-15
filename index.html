@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DataKö - Consulting Data & IA</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <!-- Header -->
     <header class="header">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="data/logo.png" alt="DataKö Logo">
+                <img src="images/logo.png" alt="DataKö Logo" class="logo-img" style="height: 150px; width: auto;">
             </a>
-            
+
             <nav>
                 <ul class="nav-menu">
                     <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
@@ -37,46 +40,205 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero Section -->
+    <section class="hero hero-home">
         <div class="container">
-            <div class="hero-content">
-                <span class="hero-tag">Cabinet de Consulting</span>
-                <h1>Transformez vos données en levier de croissance</h1>
-                <p>DataKö accompagne les entreprises en Afrique de l'Ouest et en Europe dans la modernisation de leur gestion de données et l'intégration de l'Intelligence Artificielle.</p>
-                <div class="hero-buttons">
-                    <a href="prestations.html" class="btn btn-primary">Nos Services</a>
-                    <a href="contact.html" class="btn btn-outline">Nous Contacter</a>
+            <div class="hero-layout">
+                <!-- Text Content -->
+                <div class="hero-content">
+                    <span class="hero-tag">Cabinet de Consulting</span>
+                    <h1 class="hero-title">
+                        Transformez vos données en levier de croissance
+                    </h1>
+                    <p class="hero-text">
+                        DataKö accompagne les entreprises partout en Afrique de l’Ouest et en Europe
+                        dans la modernisation de leur gestion de données et l’intégration de
+                        l’Intelligence Artificielle.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="prestations.html" class="btn btn-primary">Nos Services</a>
+                        <a href="contact.html" class="btn btn-outline">Nous Contacter</a>
+                    </div>
+                </div>
+
+                <!-- Visual Content -->
+                <div class="hero-visual">
+                    <img src="images/hero-datako.png" alt="Visualisation Data & IA DataKö" class="hero-img">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Intro Section -->
-    <section class="section bg-secondary">
+
+    <!-- Expertise Section -->
+    <section class="section section-expertise">
         <div class="container">
-            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <div class="expertise-content">
                 <h2>Une expertise pointue</h2>
-                <p>Nous aidons les PME, les grandes entreprises et les organisations publiques à structurer, visualiser et valoriser leurs données pour une prise de décision éclairée.</p>
+                <p class="expertise-intro">
+                    DataKö est né d’une conviction simple : la Data doit devenir un véritable levier de performance pour
+                    les entreprises, et non un sujet complexe réservé aux experts.
+                </p>
+
+                <ul class="expertise-list">
+                    <li>
+                        <span class="icon-check">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                        <span><strong>Pragmatisme :</strong> des solutions concrètes, adaptées au terrain.</span>
+                    </li>
+                    <li>
+                        <span class="icon-check">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                        <span><strong>Excellence technique :</strong> standards enterprise-grade issus de missions
+                            menées dans de grands groupes.</span>
+                    </li>
+                    <li>
+                        <span class="icon-check">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                        <span><strong>Transmission :</strong> accompagner, documenter, rendre vos équipes
+                            autonomes.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="expertise-visual">
+                <div class="expertise-card-glow"></div>
+                <img src="images/home_section2.png" alt="Expertise Data & IA DataKö" class="expertise-img">
             </div>
         </div>
     </section>
 
-    <!-- Services Highlight -->
-    <section class="section">
+    <!-- Services Highlight / Domaines d'intervention -->
+    <section class="section section-services">
         <div class="container">
-            <h3 style="margin-bottom: 40px;">Nos Domaines d'Intervention</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                <div style="padding: 30px; background: rgba(255,255,255,0.05); border-radius: 8px;">
+            <div class="section-header">
+                <h3>Nos Domaines d’Intervention</h3>
+                <p>
+                    De la stratégie à la mise en production, nous couvrons l’ensemble de la chaîne de valeur data
+                    pour vous aider à transformer vos données en avantage concurrentiel.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Recherche de Profil Data -->
+                <article class="service-card">
+                    <div class="service-icon">
+                        <span>👥</span>
+                    </div>
+                    <h4>Expertise & Matching Data</h4>
+                    <p>
+                        Sourcing, sélection et mise en relation avec des profils Data & IA adaptés
+                        à vos enjeux, partout en Afrique.
+                    </p>
+                    <a href="matching.html" class="service-cta">En savoir plus →</a>
+                </article>
+
+                <!-- Data Engineering -->
+                <article class="service-card">
+                    <div class="service-icon">
+                        <span>⚙️</span>
+                    </div>
                     <h4>Data Engineering</h4>
-                    <p>Architecture de données, pipelines ETL/ELT et modernisation d'infrastructures.</p>
+                    <p>
+                        Architecture de données moderne, pipelines ETL/ELT robustes et
+                        industrialisation de vos flux vers des plateformes cloud ou on-premise.
+                    </p>
+                    <a href="prestations.html" class="service-cta">En savoir plus →</a>
+                </article>
+
+                <!-- Data Analyse & BI -->
+                <article class="service-card">
+                    <div class="service-icon">
+                        <span>📊</span>
+                    </div>
+                    <h4>Analytics &amp; BI</h4>
+                    <p>
+                        De la préparation des données à la data visualisation,
+                        nous construisons des tableaux de bord stratégiques pour piloter vos décisions.
+                    </p>
+                    <a href="prestations.html" class="service-cta">En savoir plus →</a>
+                </article>
+
+                <!-- IA & Automatisation -->
+                <article class="service-card">
+                    <div class="service-icon">
+                        <span>🤖</span>
+                    </div>
+                    <h4>IA &amp; Automatisation</h4>
+                    <p>
+                        Automatisation de processus
+                        et solutions data & IA sur mesure
+                        pour répondre à vos usages métiers
+                        et améliorer l’efficacité opérationnelle.
+
+
+
+
+
+                    </p>
+                    <a href="prestations.html" class="service-cta">En savoir plus →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pourquoi DataKö (New Asymmetric Structure) -->
+    <section class="section section-why bg-secondary">
+        <div class="container">
+            <div class="why-intro-block">
+                <h3>Pourquoi choisir DataKö ?</h3>
+            </div>
+
+            <div class="why-layout">
+                <!-- Left Column: The Statement -->
+                <div class="why-statement">
+                    <p class="statement-lead">
+                        Nous ne sommes pas une agence de staffing, ni une ESN classique.
+                        DataKö est votre partenaire de confiance
+                        pour transformer la complexité data
+                        en levier de performance durable
+                    </p>
+                    <p class="statement-signature">
+                        Vos ambitions méritent une exécution sans faille.
+                    </p>
                 </div>
-                <div style="padding: 30px; background: rgba(255,255,255,0.05); border-radius: 8px;">
-                    <h4>Business Intelligence</h4>
-                    <p>Tableaux de bord interactifs et visualisation de données pour le pilotage stratégique.</p>
-                </div>
-                <div style="padding: 30px; background: rgba(255,255,255,0.05); border-radius: 8px;">
-                    <h4>Intelligence Artificielle</h4>
-                    <p>Machine Learning, automatisation des processus et solutions prédictives.</p>
+
+                <!-- Right Column: The Pillars -->
+                <div class="why-pillars">
+                    <div class="why-pillar-item">
+                        <h4>Alignement Business</h4>
+                        <p>Comprendre vos enjeux stratégiques avant de toucher à l'architecture technique.</p>
+                    </div>
+                    <div class="why-pillar-item">
+                        <h4>Standards Techniques</h4>
+                        <p>Une rigueur industrielle et des méthodes inspirées des leaders de la tech.</p>
+                    </div>
+                    <div class="why-pillar-item">
+                        <h4>Ancrage Terrain</h4>
+                        <p>Une présence hybride Europe & Afrique pour une réactivité totale.</p>
+                    </div>
+                    <div class="why-pillar-item">
+                        <h4>Culture du Résultat</h4>
+                        <p>Une approche orientée mise en production,
+                            avec des POC pensés dès le départ
+                            pour créer de la valeur mesurable.
+                            .</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -87,8 +249,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <img src="data/logo.png" alt="DataKö" style="height: 30px; margin-bottom: 20px;">
-                    <p>Cabinet de consulting Data & IA.</p>
+                    <img src="images/logo.png" alt="DataKö" class="footer-logo">
+                    <p>Cabinet de consulting Data &amp; IA.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Navigation</h4>
@@ -102,8 +264,8 @@
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul class="footer-links">
-                        <li><a href="mailto:contact@datako.ai">contact@datako.ai</a></li>
-                        <li>Guinée & France</li>
+                        <li><a href="mailto:contact@datakö.com">contact@datakö.com</a></li>
+                        <li>Guinée &amp; France</li>
                     </ul>
                 </div>
             </div>
@@ -120,4 +282,5 @@
 
     <script src="js/main.js"></script>
 </body>
+
 </html>

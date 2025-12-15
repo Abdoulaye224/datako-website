@@ -1,0 +1,577 @@
+/* =========================================
+   Matching Page - Dedicated Styles
+   ========================================= */
+
+/* --- Matching Hero Section (Scoped) --- */
+.match-hero {
+    /* Base vibrant dark teal background */
+    background-color: #062A33;
+    background-image: radial-gradient(circle at 50% 0%, #073744 0%, #062A33 70%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Tech Pattern (Dots + Lines) - CSS Only */
+.match-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    /* Dot pattern */
+    background-image:
+        radial-gradient(rgba(255, 255, 255, 0.1) 1.5px, transparent 1.5px),
+        linear-gradient(rgba(58, 122, 254, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(58, 122, 254, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px, 60px 60px, 60px 60px;
+    /* Grid sizes */
+    background-position: center;
+    opacity: 0.6;
+    animation: matchHeroDrift 18s linear infinite;
+}
+
+/* Vignette & Spotlight Overlay + Bottom Fade */
+.match-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 50% 20%, rgba(58, 122, 254, 0.15), transparent 60%),
+        /* Top light */
+        radial-gradient(circle at center, transparent 30%, #062A33 100%),
+        /* Vignette edges */
+        linear-gradient(to bottom, transparent, rgba(1, 14, 17, 0.8));
+    /* Bottom transition fade */
+    z-index: 1;
+}
+
+/* Ensure content is above overlays */
+.match-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Entrance Animations */
+.match-hero h1,
+.match-hero p,
+.match-hero .hero-tag {
+    opacity: 0;
+    animation: matchHeroFadeUp 1s ease-out forwards;
+}
+
+.match-hero .hero-tag {
+    animation-delay: 0.1s;
+}
+
+.match-hero h1 {
+    animation-delay: 0.3s;
+}
+
+.match-hero p {
+    animation-delay: 0.5s;
+}
+
+/* Keyframes */
+@keyframes matchHeroDrift {
+    0% {
+        background-position: center top, 0 0, 0 0;
+    }
+
+    50% {
+        background-position: center top, 20px 20px, 20px 20px;
+    }
+
+    100% {
+        background-position: center top, 0 0, 0 0;
+    }
+}
+
+@keyframes matchHeroFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .match-hero::before {
+        animation: none;
+    }
+
+    .match-hero h1,
+    .match-hero p,
+    .match-hero .hero-tag {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* --- Introduction / Positioning Section --- */
+.match-intro {
+    padding: 100px 0;
+    /* Subtle differentiation from Hero: Deep dark teal gradient */
+    background: linear-gradient(135deg, #011218 0%, #021a21 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.match-intro-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.match-intro-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+    background: linear-gradient(180deg, #fff, rgba(255, 255, 255, 0.9));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.match-intro-desc {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+
+.match-intro-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.match-intro-list li {
+    position: relative;
+    padding-left: 28px;
+    font-size: 1.05rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+.match-intro-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent-blue);
+    font-size: 1.5rem;
+    line-height: 1rem;
+    top: 4px;
+}
+
+.match-visual {
+    position: relative;
+    height: 400px;
+    background: radial-gradient(circle at center, rgba(58, 122, 254, 0.1), transparent 70%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Abstract Network Animation */
+.match-visual::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(122, 92, 255, 0.4) 1px, transparent 2px),
+        radial-gradient(circle at 80% 40%, rgba(58, 122, 254, 0.4) 1px, transparent 2px),
+        radial-gradient(circle at 40% 70%, rgba(255, 255, 255, 0.3) 1px, transparent 2px);
+    background-size: 120px 120px;
+    opacity: 0.6;
+    animation: matchFloat 20s linear infinite;
+}
+
+.match-visual::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, rgba(58, 122, 254, 0.1), rgba(122, 92, 255, 0.1));
+    border-radius: 50%;
+    filter: blur(40px);
+}
+
+@keyframes matchFloat {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-50px) rotate(10deg);
+    }
+}
+
+
+/* --- Process Diagram Section --- */
+.match-process {
+    padding: 100px 0;
+    background-color: #021a21;
+    /* Slightly darker than match-intro */
+    position: relative;
+    overflow: hidden;
+    /* For animations */
+}
+
+.match-process-header {
+    text-align: center;
+    margin-bottom: 80px;
+    opacity: 0;
+    /* Init hidden */
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.match-process-header.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.match-process-header h2 {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+    color: #fff;
+}
+
+.match-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Timeline Layout */
+.match-timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Connection Line */
+.match-timeline::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    /* Centers with the 60px circle */
+    left: 30px;
+    right: 30px;
+    height: 1px;
+    background: linear-gradient(90deg,
+            rgba(58, 122, 254, 0.15),
+            rgba(122, 92, 255, 0.15));
+    z-index: 1;
+}
+
+.match-step {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    text-align: center;
+    padding: 0 15px;
+
+    opacity: 0;
+    /* Init hidden */
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Stagger delays handled in JS or Nth-child CSS if static */
+.match-step:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.match-step:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.match-step:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.match-step:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.match-step.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.match-step:hover .match-step-circle {
+    transform: scale(1.1);
+    border-color: rgba(58, 122, 254, 0.6);
+    box-shadow: 0 0 15px rgba(58, 122, 254, 0.2), 0 0 0 10px #021a21;
+}
+
+.match-step-circle {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 24px;
+    background: #021a21;
+    /* Masks the line */
+    border: 1px solid rgba(58, 122, 254, 0.3);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--accent-blue);
+    position: relative;
+    box-shadow: 0 0 0 10px #021a21;
+    /* Thicker mask for the line */
+    transition: all 0.3s ease;
+}
+
+.match-step-circle svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+}
+
+.match-step h3 {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.match-step p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    max-width: 240px;
+    /* Slightly wider */
+    margin: 0 auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .match-intro-layout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .match-visual {
+        height: 300px;
+        order: -1;
+        /* Visual on top on mobile if desired, or keep default */
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Vertical Timeline for Mobile */
+    .match-timeline {
+        flex-direction: column;
+        gap: 50px;
+        align-items: flex-start;
+        padding-left: 0;
+        margin-left: 20px;
+        /* Offset for line */
+    }
+
+    .match-timeline::before {
+        height: 100%;
+        width: 1px;
+        top: 0;
+        bottom: 0;
+        left: 30px;
+        /* Center of 60px circle */
+        right: auto;
+        background: linear-gradient(180deg,
+                rgba(58, 122, 254, 0.15),
+                rgba(122, 92, 255, 0.15));
+    }
+
+    .match-step {
+        display: flex;
+        align-items: flex-start;
+        text-align: left;
+        width: 100%;
+        padding: 0;
+    }
+
+    /* Reset delays for mobile if needed, or keep them */
+
+    .match-step-circle {
+        margin: 0 24px 0 0;
+        flex-shrink: 0;
+        /* box-shadow handles the mask */
+    }
+
+    .match-step h3 {
+        margin-top: 8px;
+        font-size: 1.15rem;
+    }
+
+    .match-step p {
+        margin: 0;
+        max-width: 100%;
+    }
+}
+
+/* --- Companies Section Specifics --- */
+/* Shared styles for both sections */
+.matching-enterprises .matching-img-container,
+.matching-consultants .matching-img-container {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    line-height: 0;
+    /* Reduce dominance as requested - smaller than the intro visual */
+    flex: 0 0 320px;
+    /* Limits width/grow */
+    width: 320px;
+    height: 320px;
+    /* Smaller square-ish or portrait ratio */
+    min-width: 280px;
+}
+
+/* Subtle overlay/dimming for less dominance */
+.matching-enterprises .matching-img-container::after,
+.matching-consultants .matching-img-container::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(2, 26, 33, 0.2), rgba(2, 26, 33, 0.5));
+    pointer-events: none;
+}
+
+.matching-ent-text {
+    flex: 1.5 !important;
+    /* Give more weight to text */
+    min-width: 320px;
+    padding-left: 20px;
+    /* Breathing room */
+}
+
+.matching-img {
+    width: 100%;
+    height: 100%;
+    /* Fill the constrained container */
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    opacity: 0.9;
+    /* Slightly reduced visual impact */
+}
+
+.matching-enterprises:hover .matching-img,
+.matching-consultants:hover .matching-img {
+    transform: scale(1.03);
+}
+
+.btn-open-modal svg {
+    transition: transform 0.3s ease;
+}
+
+.btn-open-modal:hover svg {
+    transform: translateX(-3px);
+}
+
+@media (max-width: 768px) {
+
+    .matching-enterprises .matching-img-container,
+    .matching-consultants .matching-img-container {
+        width: 100%;
+        max-width: 100%;
+        height: 250px;
+        /* Smaller banner on mobile */
+        flex: auto;
+        margin-bottom: 24px;
+    }
+
+    .matching-ent-text {
+        padding-left: 0;
+    }
+}
+
+/* Modal Styles (Mirrored from Prestations) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-container {
+    background: #021a21;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    border-radius: var(--border-radius);
+    padding: 40px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    transform: scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-overlay.active .modal-container {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    line-height: 1;
+    padding: 5px;
+}
+
+.modal-close:hover {
+    color: #fff;
+}
+
+/* Prevent body scroll when modal is open */
+body.no-scroll {
+    overflow: hidden;
+}

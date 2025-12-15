@@ -1,0 +1,602 @@
+/* =========================================
+   Hero Section
+   ========================================= */
+
+.hero-home {
+    /* Background & Dimensions */
+    background:
+        radial-gradient(circle at top left, rgba(58, 122, 254, 0.20), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(122, 92, 255, 0.22), transparent 60%),
+        var(--bg-primary);
+    min-height: 85vh;
+    padding-top: calc(var(--header-height) + 40px);
+    padding-bottom: 60px;
+
+    /* Layout */
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    /* Prevent spillover */
+}
+
+/* Widen the container specifically for Hero to reduce empty space */
+.hero-home .container {
+    max-width: 1400px;
+    width: 100%;
+}
+
+/* Layout Container */
+.hero-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    /* Balanced spacing */
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================================
+   Hero Content (Left)
+   ========================================= */
+.hero-content {
+    flex: 1;
+    max-width: 520px;
+    /* Increased slightly for balance */
+}
+
+.hero-tag {
+    display: inline-block;
+    color: var(--accent-blue);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+    background: rgba(58, 122, 254, 0.1);
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid rgba(58, 122, 254, 0.2);
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    /* Responsive typography */
+    line-height: 1.1;
+    margin-bottom: 24px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.hero h1,
+.hero-title {
+    font-size: 3.2rem;
+}
+
+.hero-text {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 580px;
+    margin-bottom: 40px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* =========================================
+   Hero Visual (Right)
+   ========================================= */
+.hero-visual {
+    flex: 1.2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    max-width: 960px;
+    /* Increased to fill more space */
+    margin-top: 0;
+}
+
+/* Glow Effect behind image */
+.hero-visual::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(122, 92, 255, 0.25) 0%, rgba(58, 122, 254, 0) 70%);
+    filter: blur(40px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    /* Allow full width of container */
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+    /* Border glow */
+
+    /* Animation */
+    animation: heroFloat 8s ease-in-out infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.hero-visual:hover .hero-img {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* Float Animation */
+@keyframes heroFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* =========================================
+   Responsive Design
+   ========================================= */
+/* Écrans moyens : laptop 13–16" environ */
+@media (max-width: 1400px) and (min-width: 993px) {
+    .hero-home .container {
+        max-width: 1200px;
+        /* Rétrécit la zone centrale */
+    }
+
+    .hero-layout {
+        gap: 40px;
+        /* Moins d’espace entre texte & image */
+        justify-content: center;
+    }
+
+    .hero-content {
+        max-width: 540px;
+    }
+
+    .hero-visual {
+        max-width: 520px;
+        /* Image un peu moins large -> rapproche tout */
+    }
+
+    .hero-title {
+        font-size: 2.6rem;
+        /* Légèrement plus petit, plus confortable */
+    }
+
+    .hero-text {
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 992px) {
+    .hero-home {
+        min-height: auto;
+        padding-top: calc(var(--header-height) + 20px);
+        padding-bottom: 40px;
+    }
+
+    .hero-home .container {
+        max-width: 100%;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .hero-layout {
+        flex-direction: column;
+        /* Text first, Image second */
+        text-align: center;
+        gap: 24px;
+    }
+
+    .hero-content {
+        max-width: 480px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        order: 1;
+        /* Explicit order just in case */
+    }
+
+    .hero-visual {
+        justify-content: center;
+        width: 100%;
+        max-width: 320px;
+        /* Slight reduction */
+        margin: 0 auto;
+        order: 2;
+        /* Image after text */
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+        /* Smaller */
+        margin-bottom: 12px;
+    }
+
+    .hero-text {
+        font-size: 0.9rem;
+        /* Smaller */
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 24px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 1.75rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* =========================================
+   Expertise Section
+   ========================================= */
+.section-expertise {
+    position: relative;
+    background:
+        radial-gradient(circle at center top, rgba(58, 122, 254, 0.08), transparent 70%),
+        var(--bg-secondary);
+    padding-bottom: 100px;
+}
+
+.expertise-content {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.expertise-intro {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.expertise-list {
+    text-align: left;
+    display: inline-block;
+    /* Allows list to be centered while items are left-aligned */
+    margin: 0 auto;
+}
+
+.expertise-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+}
+
+.expertise-list strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+.icon-check {
+    color: var(--accent-violet);
+    background: rgba(122, 92, 255, 0.1);
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Image Card */
+.expertise-visual {
+    position: relative;
+    max-width: 840px;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 10px;
+    /* Small "frame" effect or spacing */
+}
+
+.expertise-card-glow {
+    position: absolute;
+    inset: 50px;
+    background: radial-gradient(circle, rgba(122, 92, 255, 0.4), transparent 70%);
+    filter: blur(50px);
+    z-index: 0;
+    opacity: 0.6;
+}
+
+.expertise-img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.08);
+    /* Subtle border */
+    transition: transform 0.3s ease;
+}
+
+.expertise-visual:hover .expertise-img {
+    transform: translateY(-4px);
+}
+
+/* Responsive Expertise */
+@media (max-width: 768px) {
+    .expertise-list li {
+        font-size: 0.95rem;
+    }
+
+    .expertise-intro {
+        font-size: 1rem;
+    }
+}
+
+/* Intro Section (Deprecated/Removed, keeping styles if needed somewhere else or cleanup) */
+.section-intro {
+    position: relative;
+}
+
+.section-intro-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-intro-inner p {
+    margin-top: 10px;
+}
+
+/* Services */
+.section-services {
+    background: radial-gradient(circle at top, rgba(58, 122, 254, 0.12), transparent 55%);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.service-card {
+    background: rgba(5, 49, 61, 0.95);
+    border-radius: var(--border-radius);
+    padding: 28px 24px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(58, 122, 254, 0.18), transparent 55%);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    border-color: rgba(58, 122, 254, 0.6);
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.service-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.06);
+    margin-bottom: 18px;
+    font-size: 1.2rem;
+}
+
+.service-card h4 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    margin-bottom: 18px;
+}
+
+.service-cta {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.service-cta:hover {
+    color: var(--accent-violet);
+}
+
+/* Pourquoi DataKö (New Asymmetric Structure) */
+.section-why {
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.why-intro-block {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.why-intro-block h3 {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+}
+
+/* Asymmetric Layout */
+.why-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    /* 40% / 60% approx ratio */
+    gap: 80px;
+    align-items: start;
+}
+
+/* Left Column: Statement */
+.why-statement {
+    position: relative;
+    padding-right: 20px;
+}
+
+.statement-lead {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 40px;
+    border-left: 3px solid var(--accent-violet);
+    padding-left: 24px;
+}
+
+.statement-signature {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+    letter-spacing: 0.5px;
+}
+
+/* Right Column: Pillars */
+.why-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    /* Handled by padding/borders */
+}
+
+.why-pillar-item {
+    padding: 24px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: background 0.3s ease, padding-left 0.3s ease;
+}
+
+/* Last item border */
+.why-pillar-item:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    /* Optional closing border */
+}
+
+/* Hover Effect on Pillars */
+.why-pillar-item:hover {
+    background: rgba(255, 255, 255, 0.02);
+    padding-left: 20px;
+}
+
+.why-pillar-item h4 {
+    font-size: 1.15rem;
+    color: #fff;
+    font-weight: 600;
+    margin: 0;
+}
+
+.why-pillar-item p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin: 0;
+    max-width: 90%;
+}
+
+/* Responsive Why Section */
+@media (max-width: 992px) {
+    .why-layout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .why-statement {
+        padding-right: 0;
+        text-align: left;
+    }
+
+    .statement-lead {
+        font-size: 1.25rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-up {
+    opacity: 1;
+    /* visible même si l’animation bug */
+    animation: fadeUp 0.8s ease forwards;
+    will-change: transform, opacity;
+}
+
+.animate-fade-up.delay-1 {
+    animation-delay: 0.12s;
+}
+
+.animate-fade-up.delay-2 {
+    animation-delay: 0.24s;
+}
+
+.animate-fade-up.delay-3 {
+    animation-delay: 0.36s;
+}
