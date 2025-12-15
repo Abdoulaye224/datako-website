@@ -80,18 +80,29 @@
     </section>
 
     <!-- For Companies -->
-    <section class="section bg-secondary">
+    <!-- For Companies -->
+    <section class="section bg-secondary matching-enterprises">
         <div class="container">
             <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
+                <div class="matching-img-container" style="flex: 1; min-width: 300px;">
+                    <img src="images/matching_entreprises.png" alt="Matching DataKö - Entreprises" class="matching-img">
+                </div>
                 <div style="flex: 1; min-width: 300px;">
                     <h2>Pour les Entreprises</h2>
                     <p>Accédez à un vivier de consultants qualifiés et pré-sélectionnés par nos soins. Que ce soit pour
                         une mission ponctuelle ou un projet de longue durée, nous trouvons le profil qui correspond à
                         vos besoins.</p>
-                    <a href="contact.html" class="btn btn-primary" style="margin-top: 20px;">Trouver un talent</a>
-                </div>
-                <div
-                    style="flex: 1; min-width: 300px; height: 300px; background: rgba(255,255,255,0.05); border-radius: 8px;">
+                    <button class="btn btn-primary btn-open-modal" data-open-modal="projectModal"
+                        style="margin-top: 20px; display: inline-flex; align-items: center;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px;">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        Trouver un talent
+                    </button>
                 </div>
             </div>
         </div>
@@ -222,6 +233,17 @@
     <a href="contact.html" class="floating-btn">
         Soumettre votre projet
     </a>
+
+    <!-- Modal -->
+    <div id="projectModal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Fermer">✕</button>
+            <h2 style="margin-bottom: 30px; text-align: center;">Envoyez-nous un message</h2>
+            <div id="contact-form-container">
+                <!-- Form injected by JS -->
+            </div>
+        </div>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {

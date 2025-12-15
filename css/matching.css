@@ -322,3 +322,44 @@
         max-width: 100%;
     }
 }
+
+/* --- Companies Section Specifics --- */
+.matching-enterprises .matching-img-container {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    line-height: 0;
+    /* Match the first section's size */
+    flex: 1;
+    min-width: 300px;
+    height: 400px;
+    /* Explicit match to .match-visual height */
+}
+
+.matching-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.matching-enterprises:hover .matching-img {
+    transform: scale(1.03);
+}
+
+.btn-open-modal svg {
+    transition: transform 0.3s ease;
+}
+
+.btn-open-modal:hover svg {
+    transform: translateX(-3px);
+}
+
+@media (max-width: 768px) {
+    .matching-enterprises .matching-img-container {
+        flex: 1 1 auto !important;
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}
