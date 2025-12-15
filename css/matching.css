@@ -1,0 +1,324 @@
+/* =========================================
+   Matching Page - Dedicated Styles
+   ========================================= */
+
+/* --- Introduction / Positioning Section --- */
+.match-intro {
+    padding: 100px 0;
+    background-color: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.match-intro-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.match-intro-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+    background: linear-gradient(180deg, #fff, rgba(255, 255, 255, 0.9));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.match-intro-desc {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+
+.match-intro-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.match-intro-list li {
+    position: relative;
+    padding-left: 28px;
+    font-size: 1.05rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+.match-intro-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent-blue);
+    font-size: 1.5rem;
+    line-height: 1rem;
+    top: 4px;
+}
+
+.match-visual {
+    position: relative;
+    height: 400px;
+    background: radial-gradient(circle at center, rgba(58, 122, 254, 0.1), transparent 70%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Abstract Network Animation */
+.match-visual::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(122, 92, 255, 0.4) 1px, transparent 2px),
+        radial-gradient(circle at 80% 40%, rgba(58, 122, 254, 0.4) 1px, transparent 2px),
+        radial-gradient(circle at 40% 70%, rgba(255, 255, 255, 0.3) 1px, transparent 2px);
+    background-size: 120px 120px;
+    opacity: 0.6;
+    animation: matchFloat 20s linear infinite;
+}
+
+.match-visual::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, rgba(58, 122, 254, 0.1), rgba(122, 92, 255, 0.1));
+    border-radius: 50%;
+    filter: blur(40px);
+}
+
+@keyframes matchFloat {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-50px) rotate(10deg);
+    }
+}
+
+
+/* --- Process Diagram Section --- */
+.match-process {
+    padding: 100px 0;
+    background-color: #021a21;
+    /* Slightly darker than match-intro */
+    position: relative;
+    overflow: hidden;
+    /* For animations */
+}
+
+.match-process-header {
+    text-align: center;
+    margin-bottom: 80px;
+    opacity: 0;
+    /* Init hidden */
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.match-process-header.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.match-process-header h2 {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+    color: #fff;
+}
+
+.match-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Timeline Layout */
+.match-timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Connection Line */
+.match-timeline::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    /* Centers with the 60px circle */
+    left: 30px;
+    right: 30px;
+    height: 1px;
+    background: linear-gradient(90deg,
+            rgba(58, 122, 254, 0.15),
+            rgba(122, 92, 255, 0.15));
+    z-index: 1;
+}
+
+.match-step {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    text-align: center;
+    padding: 0 15px;
+
+    opacity: 0;
+    /* Init hidden */
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Stagger delays handled in JS or Nth-child CSS if static */
+.match-step:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.match-step:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.match-step:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.match-step:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.match-step.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.match-step:hover .match-step-circle {
+    transform: scale(1.1);
+    border-color: rgba(58, 122, 254, 0.6);
+    box-shadow: 0 0 15px rgba(58, 122, 254, 0.2), 0 0 0 10px #021a21;
+}
+
+.match-step-circle {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 24px;
+    background: #021a21;
+    /* Masks the line */
+    border: 1px solid rgba(58, 122, 254, 0.3);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--accent-blue);
+    position: relative;
+    box-shadow: 0 0 0 10px #021a21;
+    /* Thicker mask for the line */
+    transition: all 0.3s ease;
+}
+
+.match-step-circle svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+}
+
+.match-step h3 {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.match-step p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    max-width: 240px;
+    /* Slightly wider */
+    margin: 0 auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .match-intro-layout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .match-visual {
+        height: 300px;
+        order: -1;
+        /* Visual on top on mobile if desired, or keep default */
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Vertical Timeline for Mobile */
+    .match-timeline {
+        flex-direction: column;
+        gap: 50px;
+        align-items: flex-start;
+        padding-left: 0;
+        margin-left: 20px;
+        /* Offset for line */
+    }
+
+    .match-timeline::before {
+        height: 100%;
+        width: 1px;
+        top: 0;
+        bottom: 0;
+        left: 30px;
+        /* Center of 60px circle */
+        right: auto;
+        background: linear-gradient(180deg,
+                rgba(58, 122, 254, 0.15),
+                rgba(122, 92, 255, 0.15));
+    }
+
+    .match-step {
+        display: flex;
+        align-items: flex-start;
+        text-align: left;
+        width: 100%;
+        padding: 0;
+    }
+
+    /* Reset delays for mobile if needed, or keep them */
+
+    .match-step-circle {
+        margin: 0 24px 0 0;
+        flex-shrink: 0;
+        /* box-shadow handles the mask */
+    }
+
+    .match-step h3 {
+        margin-top: 8px;
+        font-size: 1.15rem;
+    }
+
+    .match-step p {
+        margin: 0;
+        max-width: 100%;
+    }
+}
