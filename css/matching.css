@@ -29,7 +29,7 @@
     animation: matchHeroDrift 18s linear infinite;
 }
 
-/* Vignette & Spotlight Overlay */
+/* Vignette & Spotlight Overlay + Bottom Fade */
 .match-hero::after {
     content: '';
     position: absolute;
@@ -38,8 +38,10 @@
     background:
         radial-gradient(circle at 50% 20%, rgba(58, 122, 254, 0.15), transparent 60%),
         /* Top light */
-        radial-gradient(circle at center, transparent 30%, #062A33 100%);
-    /* Vignette edges */
+        radial-gradient(circle at center, transparent 30%, #062A33 100%),
+        /* Vignette edges */
+        linear-gradient(to bottom, transparent, rgba(1, 14, 17, 0.8));
+    /* Bottom transition fade */
     z-index: 1;
 }
 
