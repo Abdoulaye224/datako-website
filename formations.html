@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formations - DataKö</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/formations.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -24,7 +25,7 @@
                 <ul class="nav-menu">
                     <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
                     <li class="nav-item"><a href="prestations.html" class="nav-link">Prestations</a></li>
-                    <li class="nav-item"><a href="formations.html" class="nav-link">Formations</a></li>
+                    <li class="nav-item"><a href="formations.html" class="nav-link active">Formations</a></li>
                     <li class="nav-item"><a href="matching.html" class="nav-link">Matching</a></li>
                     <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
@@ -38,51 +39,316 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- 1) Hero Section -->
+    <section class="formations-hero">
         <div class="container">
-            <div class="hero-content">
-                <span class="hero-tag">Académie DataKö</span>
-                <h1>Montez en compétence</h1>
-                <p>Des programmes de formation intensifs et pratiques pour maîtriser les outils de la Data et de l'IA.
-                </p>
+            <div class="formations-hero-content">
+                <div class="formations-hero-text">
+                    <span class="formations-label">Formations</span>
+                    <h1>Formations Data & IA orientées terrain</h1>
+                    <p class="subtitle">Des formations conçues par des praticiens pour des professionnels et des
+                        entreprises qui veulent des résultats concrets.</p>
+                    <div class="hero-cta-group">
+                        <a href="#tracks" class="btn btn-primary">Voir les parcours</a>
+                        <a href="#audience" class="btn btn-outline">Former mes équipes</a>
+                    </div>
+                </div>
+
+                <!-- Stats Panel -->
+                <div class="formations-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">🔧</div>
+                        <span>Approche terrain</span>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📂</div>
+                        <span>Cas réels</span>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎓</div>
+                        <span>Mentorat</span>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">💬</div>
+                        <span>Support</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Methodology Section -->
-    <section class="section bg-secondary">
+    <!-- 2) Audience Split Section -->
+    <section id="audience" class="audience-split">
         <div class="container">
-            <h2>Notre Méthodologie</h2>
-            <div
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px;">
-                <div style="text-align: center;">
-                    <div style="font-size: 2rem; color: var(--accent-blue); margin-bottom: 15px;">01</div>
-                    <h4>Théorie Appliquée</h4>
-                    <p>Des concepts expliqués simplement avec des cas d'usage réels.</p>
+            <div class="audience-header">
+                <h2>Deux formats, un même niveau d’exigence</h2>
+            </div>
+            <div class="audience-grid">
+                <!-- Entreprises -->
+                <div class="audience-card">
+                    <div class="audience-icon">🏢</div>
+                    <h3>Pour les entreprises</h3>
+                    <ul class="audience-list">
+                        <li>Programmes sur-mesure adaptés à vos outils</li>
+                        <li>Cas d'usage sur vos propres données internes</li>
+                        <li>Montée en compétences collective des équipes</li>
+                    </ul>
+                    <button type="button" class="btn btn-primary" data-open-modal="projectModal">Former mes
+                        équipes</button>
                 </div>
-                <div style="text-align: center;">
-                    <div style="font-size: 2rem; color: var(--accent-violet); margin-bottom: 15px;">02</div>
-                    <h4>Projets Pratiques</h4>
-                    <p>Réalisation de projets complets pour valider les acquis.</p>
-                </div>
-                <div style="text-align: center;">
-                    <div style="font-size: 2rem; color: var(--accent-blue); margin-bottom: 15px;">03</div>
-                    <h4>Mentorat</h4>
-                    <p>Suivi personnalisé par des experts du domaine.</p>
+                <!-- Particuliers -->
+                <div class="audience-card">
+                    <div class="audience-icon">👨‍💻</div>
+                    <h3>Pour les particuliers</h3>
+                    <ul class="audience-list">
+                        <li>Parcours structurés certifiants</li>
+                        <li>Projets concrets pour votre portfolio</li>
+                        <li>Accompagnement carrière personnalisé</li>
+                    </ul>
+                    <a href="#tracks" class="btn btn-outline">Voir les parcours</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Catalog Placeholder -->
-    <section class="section">
+    <!-- 3) Training Tracks Section -->
+    <section id="tracks" class="tracks-section">
         <div class="container">
-            <h2>Catalogue de Formations</h2>
-            <div
-                style="margin-top: 30px; padding: 40px; background: rgba(255,255,255,0.05); border-radius: 8px; text-align: center;">
-                <p>Le catalogue des formations 2025 sera bientôt disponible.</p>
-                <a href="contact.html" class="btn btn-outline" style="margin-top: 20px;">Être informé</a>
+            <div class="section-header">
+                <h2>Choisissez votre parcours</h2>
+            </div>
+            <div class="tracks-grid">
+                <!-- Track 1: Analyst -->
+                <div class="track-card">
+                    <div class="track-header">
+                        <span class="track-level">Essentiel</span>
+                        <span class="track-duration">⏱ 4–8 semaines</span>
+                    </div>
+                    <h3>Data Analyst / BI</h3>
+                    <div class="track-content">
+                        <ul class="track-benefits">
+                            <li>Nettoyage et préparation de données</li>
+                            <li>Création de dashboards interactifs</li>
+                            <li>Storytelling et présentation</li>
+                            <li>SQL avancé pour l'analyse</li>
+                        </ul>
+                        <div class="track-skills">
+                            <span class="skill-chip">SQL</span>
+                            <span class="skill-chip">PowerBI</span>
+                            <span class="skill-chip">Tableau</span>
+                            <span class="skill-chip">Excel</span>
+                        </div>
+                    </div>
+                    <div class="track-footer">
+                        <button class="btn-track">Voir le programme</button>
+                    </div>
+                </div>
+
+                <!-- Track 2: Data Engineering -->
+                <div class="track-card">
+                    <div class="track-header">
+                        <span class="track-level">Pro</span>
+                        <span class="track-duration">⏱ 6–10 semaines</span>
+                    </div>
+                    <h3>Data Engineering</h3>
+                    <div class="track-content">
+                        <ul class="track-benefits">
+                            <li>Architecture des pipelines de données</li>
+                            <li>Traitements distribués (Spark)</li>
+                            <li>Cloud Data Platforms</li>
+                            <li>Orchestration (Airflow)</li>
+                        </ul>
+                        <div class="track-skills">
+                            <span class="skill-chip">Python</span>
+                            <span class="skill-chip">SQL</span>
+                            <span class="skill-chip">Spark</span>
+                            <span class="skill-chip">AWS/Azure</span>
+                        </div>
+                    </div>
+                    <div class="track-footer">
+                        <button class="btn-track">Voir le programme</button>
+                    </div>
+                </div>
+
+                <!-- Track 3: IA & GenAI -->
+                <div class="track-card">
+                    <div class="track-header">
+                        <span class="track-level">Avancé</span>
+                        <span class="track-duration">⏱ 8–12 semaines</span>
+                    </div>
+                    <h3>IA & GenAI Appliquée</h3>
+                    <div class="track-content">
+                        <ul class="track-benefits">
+                            <li>Machine Learning en production</li>
+                            <li>Fine-tuning de LLMs</li>
+                            <li>RAG et agents conversationnels</li>
+                            <li>Déploiement de modèles</li>
+                        </ul>
+                        <div class="track-skills">
+                            <span class="skill-chip">Python</span>
+                            <span class="skill-chip">PyTorch</span>
+                            <span class="skill-chip">LangChain</span>
+                            <span class="skill-chip">MLOps</span>
+                        </div>
+                    </div>
+                    <div class="track-footer">
+                        <button class="btn-track">Voir le programme</button>
+                    </div>
+                </div>
+
+                <!-- Track 4: Sur-Mesure -->
+                <div class="track-card" style="border-color: var(--accent-violet);">
+                    <div class="track-header">
+                        <span class="track-level" style="background: var(--accent-violet);">Custom</span>
+                        <span class="track-duration">⏱ Flexible</span>
+                    </div>
+                    <h3>Sur-mesure (Entreprise)</h3>
+                    <div class="track-content">
+                        <ul class="track-benefits">
+                            <li>Audit des compétences actuelles</li>
+                            <li>Programme co-construit avec vos leads</li>
+                            <li>Mentorat technique in-situ</li>
+                            <li>Focus sur votre stack technique</li>
+                        </ul>
+                        <div class="track-skills">
+                            <span class="skill-chip">Architecture</span>
+                            <span class="skill-chip">Cloud</span>
+                            <span class="skill-chip">DevOps</span>
+                            <span class="skill-chip">Sécurité</span>
+                        </div>
+                    </div>
+                    <div class="track-footer">
+                        <button class="btn-primary" data-open-modal="projectModal"
+                            style="width: 100%; border-radius: 8px;">Discuter du besoin</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4) Methodology Timeline -->
+    <section class="methodology-section">
+        <div class="container">
+            <h2>Notre méthode d’apprentissage</h2>
+            <p style="color: var(--text-secondary);">Une approche structurée et personnalisée pour garantir votre
+                réussite.</p>
+
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+
+                <div class="timeline-step">
+                    <div class="step-icon">1</div>
+                    <div class="step-content">
+                        <h4>Diagnostic</h4>
+                        <p>Évaluation du niveau initial et définition des objectifs.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-icon">2</div>
+                    <div class="step-content">
+                        <h4>Formation ciblée</h4>
+                        <p>Sessions intenses axées sur la pratique et le code.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-icon">3</div>
+                    <div class="step-content">
+                        <h4>Projet réel</h4>
+                        <p>Mise en application sur un cas d'usage complexe.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-icon">4</div>
+                    <div class="step-content">
+                        <h4>Autonomie & impact</h4>
+                        <p>Validation des acquis et support post-formation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5) Trainers Credibility -->
+    <section class="trainers-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Des formateurs qui font de la Data en production</h2>
+            </div>
+            <div class="trainers-grid">
+                <!-- Trainer 1 -->
+                <div class="trainer-card">
+                    <div class="trainer-avatar">👨🏾‍💻</div>
+                    <div class="trainer-info">
+                        <h4>Abdoulaye</h4>
+                        <span class="trainer-role">Data Engineer</span>
+                        <p class="trainer-bio">Plus de 8 ans d'expérience dans la mise en place de plateformes de
+                            données à grande échelle. Passionné par l'architecture distribuée.</p>
+                        <div class="trainer-tags">
+                            <span class="tag">Spark</span>
+                            <span class="tag">Databricks</span>
+                            <span class="tag">Data Platform</span>
+                        </div>
+                        <a href="#" class="btn-outline"
+                            style="display:inline-block; margin-top:12px; font-size: 0.8rem; padding: 4px 10px; border-radius: 4px;">LinkedIn</a>
+                    </div>
+                </div>
+                <!-- Trainer 2 -->
+                <div class="trainer-card">
+                    <div class="trainer-avatar">👨🏻‍💻</div>
+                    <div class="trainer-info">
+                        <h4>Aziz</h4>
+                        <span class="trainer-role">Data & Analytics Lead</span>
+                        <p class="trainer-bio">Expert en stratégie Data et BI. Accompagne les entreprises dans la
+                            valorisation de leurs données et l'adoption de l'IA.</p>
+                        <div class="trainer-tags">
+                            <span class="tag">BI</span>
+                            <span class="tag">Strategy</span>
+                            <span class="tag">GenAI</span>
+                        </div>
+                        <a href="#" class="btn-outline"
+                            style="display:inline-block; margin-top:12px; font-size: 0.8rem; padding: 4px 10px; border-radius: 4px;">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6) Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ce que disent nos apprenants</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Une formation très concrète qui m'a permis de décrocher mon premier poste de Data Analyst. Les
+                        projets sont vraiment proches de la réalité."</p>
+                    <p style="margin-top: 16px; font-weight: 600; color:white;">Thomas D.</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"J'ai beaucoup apprécié l'approche terrain. Les formateurs savent de quoi ils parlent car ils le
+                        font au quotidien."</p>
+                    <p style="margin-top: 16px; font-weight: 600; color:white;">Sarah M.</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Le format sur-mesure pour notre équipe a été un véritable accélérateur. Nous avons pu migrer
+                        notre stack technique en quelques mois."</p>
+                    <p style="margin-top: 16px; font-weight: 600; color:white;">Karim S.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7) Final CTA -->
+    <section class="final-cta-band">
+        <div class="container">
+            <h2>Prêt à faire monter vos équipes en compétences ?</h2>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <button class="btn btn-primary" data-open-modal="projectModal">Discuter de mon besoin</button>
+                <a href="#tracks" class="btn btn-outline">Voir les parcours</a>
             </div>
         </div>
     </section>
@@ -92,7 +358,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <img src="images/logo.png" alt="DataKö" style="height: 250px; margin-bottom: 20px;">
+                    <img src="images/logo.png" alt="DataKö" style="height: 150px; margin-bottom: 20px;">
                     <p>Cabinet de consulting Data & IA.</p>
                 </div>
                 <div class="footer-col">
@@ -118,11 +384,23 @@
         </div>
     </footer>
 
-    <!-- Floating Button -->
-    <a href="contact.html" class="floating-btn">
+    <!-- Floating Button & Modal -->
+    <button class="floating-btn" data-open-modal="projectModal">
         Soumettre votre projet
-    </a>
+    </button>
 
+    <!-- Modal -->
+    <div id="projectModal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Fermer">✕</button>
+            <h2 style="margin-bottom: 30px; text-align: center;">Envoyez-nous un message</h2>
+            <div id="contact-form-container">
+                <!-- Form injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script src="js/main.js"></script>
 </body>
 
