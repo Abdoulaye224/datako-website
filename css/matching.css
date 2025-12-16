@@ -385,52 +385,80 @@
 
 @media (max-width: 768px) {
 
-    /* Vertical Timeline for Mobile */
-    .match-timeline {
-        flex-direction: column;
-        gap: 50px;
-        align-items: flex-start;
-        padding-left: 0;
-        margin-left: 20px;
-        /* Offset for line */
+    /* Prevent floating CTA overlap - Increased safety margin */
+    .match-process {
+        padding-bottom: 140px;
     }
 
+    /* Vertical Timeline for Mobile */
+    .match-timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        align-items: flex-start;
+        padding-left: 0;
+        margin-left: 0;
+        position: relative;
+        /* Context for absolute line */
+    }
+
+    /* Restore connector line as vertical guiding line */
     .match-timeline::before {
-        height: 100%;
-        width: 1px;
+        display: block;
+        content: '';
+        position: absolute;
         top: 0;
         bottom: 0;
-        left: 30px;
-        /* Center of 60px circle */
-        right: auto;
-        background: linear-gradient(180deg,
+        left: 31px;
+        /* 32px center - 1px half-width of 2px line */
+        width: 2px;
+        background: linear-gradient(to bottom,
                 rgba(58, 122, 254, 0.15),
                 rgba(122, 92, 255, 0.15));
+        z-index: 1;
     }
 
     .match-step {
-        display: flex;
-        align-items: flex-start;
+        display: grid;
+        grid-template-columns: 64px 1fr;
+        column-gap: 14px;
+        /* User requested 14px */
+        align-items: start;
         text-align: left;
         width: 100%;
         padding: 0;
+        transform: none !important;
+        opacity: 1 !important;
+        position: relative;
+        z-index: 2;
+        /* Sit above line */
     }
 
-    /* Reset delays for mobile if needed, or keep them */
-
     .match-step-circle {
-        margin: 0 24px 0 0;
+        grid-column: 1;
+        margin: 0;
         flex-shrink: 0;
-        /* box-shadow handles the mask */
+        width: 64px;
+        height: 64px;
+        position: relative;
+        z-index: 2;
+        background-color: #021a21;
+        /* Match section background to mask line */
+    }
+
+    .match-step-content {
+        grid-column: 2;
     }
 
     .match-step h3 {
-        margin-top: 8px;
+        margin: 0;
+        line-height: 1.15;
         font-size: 1.15rem;
     }
 
     .match-step p {
-        margin: 0;
+        margin: 8px 0 0;
+        line-height: 1.45;
         max-width: 100%;
     }
 }
