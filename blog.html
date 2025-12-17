@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - DataKö</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/blog.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -26,7 +27,7 @@
                     <li class="nav-item"><a href="prestations.html" class="nav-link">Prestations</a></li>
                     <li class="nav-item"><a href="formations.html" class="nav-link">Formations</a></li>
                     <li class="nav-item"><a href="matching.html" class="nav-link">Matching</a></li>
-                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link active">Blog</a></li>
                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
                 <div class="hamburger">
@@ -39,58 +40,94 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
+    <!-- Hero Section -->
+    <section class="hero blog-hero">
+        <div class="hero-glow"></div>
+        <div class="container hero-relative">
             <div class="hero-content">
                 <span class="hero-tag">Actualités</span>
                 <h1>Insights & Veille</h1>
                 <p>Découvrez nos derniers articles sur l'intelligence artificielle, la data science et les tendances
                     technologiques.</p>
+
+                <div class="blog-stats-row">
+                    <span class="stat-pill active">IA & Business</span>
+                    <span class="stat-pill">Data Engineering</span>
+                    <span class="stat-pill">PME & Organisation Data</span>
+                </div>
             </div>
         </div>
+
     </section>
 
     <!-- Articles Grid -->
     <section class="section">
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                <!-- Article 1 -->
-                <article
-                    style="background: var(--bg-secondary); border-radius: 8px; overflow: hidden; transition: transform 0.3s ease;">
-                    <div style="height: 200px; background: rgba(255,255,255,0.1);"></div>
-                    <div style="padding: 25px;">
-                        <span style="font-size: 0.8rem; color: var(--accent-blue);">IA & Business</span>
-                        <h3 style="font-size: 1.2rem; margin: 10px 0;">L'impact de l'IA générative sur les PME</h3>
-                        <p style="font-size: 0.9rem;">Comment les petites entreprises peuvent tirer parti des nouveaux
-                            outils d'IA pour gagner en productivité.</p>
-                        <a href="#" style="color: var(--accent-violet); font-weight: 600; font-size: 0.9rem;">Lire la
-                            suite →</a>
+            <div class="blog-grid">
+                <!-- Article 1: AI & Business -->
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="assets/blog/blog-ia-business.png" alt="Illustration IA générative et PME"
+                            loading="lazy">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-category">IA & Business</span>
+                        <h3 class="blog-card-title">L'impact de l'IA générative sur les PME : Levier de croissance ou
+                            défi ?</h3>
+                        <p class="blog-excerpt">Découvrez comment les petites entreprises peuvent concrètement tirer
+                            parti des nouveaux outils d'IA pour gagner en productivité et innover face aux grands
+                            acteurs.</p>
+
+                        <div class="blog-meta">
+                            <span>15 Déc 2025</span>
+                            <span>5 min de lecture</span>
+                        </div>
+
+                        <a href="article.html" class="blog-link">Lire l'article</a>
                     </div>
                 </article>
-                <!-- Article 2 -->
-                <article
-                    style="background: var(--bg-secondary); border-radius: 8px; overflow: hidden; transition: transform 0.3s ease;">
-                    <div style="height: 200px; background: rgba(255,255,255,0.1);"></div>
-                    <div style="padding: 25px;">
-                        <span style="font-size: 0.8rem; color: var(--accent-blue);">Data Engineering</span>
-                        <h3 style="font-size: 1.2rem; margin: 10px 0;">Modern Data Stack : Par où commencer ?</h3>
-                        <p style="font-size: 0.9rem;">Guide complet pour moderniser votre infrastructure de données en
-                            2025.</p>
-                        <a href="#" style="color: var(--accent-violet); font-weight: 600; font-size: 0.9rem;">Lire la
-                            suite →</a>
+
+                <!-- Article 2: Data Engineering -->
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="assets/blog/blog-data-engineering.png" alt="Illustration Modern Data Stack"
+                            loading="lazy">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-category">Data Engineering</span>
+                        <h3 class="blog-card-title">Modern Data Stack : Par où commencer votre infrastructure en 2025 ?
+                        </h3>
+                        <p class="blog-excerpt">Snowflake, dbt, Fivetran... Guide complet pour naviguer dans
+                            l'écosystème moderne et construire une infrastructure de données robuste et évolutive.</p>
+
+                        <div class="blog-meta">
+                            <span>12 Déc 2025</span>
+                            <span>8 min de lecture</span>
+                        </div>
+
+                        <a href="article.html" class="blog-link">Lire l'article</a>
                     </div>
                 </article>
-                <!-- Article 3 -->
-                <article
-                    style="background: var(--bg-secondary); border-radius: 8px; overflow: hidden; transition: transform 0.3s ease;">
-                    <div style="height: 200px; background: rgba(255,255,255,0.1);"></div>
-                    <div style="padding: 25px;">
-                        <span style="font-size: 0.8rem; color: var(--accent-blue);">Formation</span>
-                        <h3 style="font-size: 1.2rem; margin: 10px 0;">Retour sur notre dernier bootcamp</h3>
-                        <p style="font-size: 0.9rem;">Témoignages des participants de la promotion Data Analyst 2024.
-                        </p>
-                        <a href="#" style="color: var(--accent-violet); font-weight: 600; font-size: 0.9rem;">Lire la
-                            suite →</a>
+
+                <!-- Article 3: PME & Organisation Data -->
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="assets/blog/blog_PME.png" alt="Illustration organisation équipe data PME"
+                            loading="lazy">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-category">PME & Organisation Data</span>
+                        <h3 class="blog-card-title">Structurer une équipe data dans une PME</h3>
+                        <p class="blog-excerpt">Comment organiser une équipe data efficace dans une PME : rôles clés,
+                            priorités, gouvernance et bonnes pratiques pour passer de la donnée brute à la valeur
+                            métier.</p>
+
+                        <div class="blog-meta">
+                            <span>18 Déc 2025</span>
+                            <span>6 min de lecture</span>
+                        </div>
+
+                        <a href="article.html" class="blog-link">Lire l'article</a>
                     </div>
                 </article>
             </div>
