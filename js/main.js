@@ -116,4 +116,28 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         formContainer.innerHTML = contactFormHTML;
     }
+
+    // Scroll Reveal Animation for Process Steps
+    const processSteps = document.querySelectorAll('.process-step');
+    if (processSteps.length > 0) {
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: "0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // Slight artificial delay if multiple appear at once for stagger effect
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        processSteps.forEach((step, index) => {
+            step.style.transitionDelay = `${index * 100}ms`; // CSS stagger
+            observer.observe(step);
+        });
+    }
 });
