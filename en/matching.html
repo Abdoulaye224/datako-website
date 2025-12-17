@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matching - DataKö</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/matching.css">
+</head>
+
+<body class="matching-page">
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="../images/logo.png" alt="DataKö Logo" style="height: 150px; width: auto;">
+            </a>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="prestations.html" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="formations.html" class="nav-link">Training</a></li>
+                    <li class="nav-item"><a href="matching.html" class="nav-link active">Matching</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero match-hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-tag">Talent</span>
+                <h1>Find the Ideal Expert</h1>
+                <p>We connect the best Data & AI talents with companies facing ambitious challenges.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro / Positioning Section -->
+    <section class="match-intro">
+        <div class="container">
+            <div class="match-intro-layout">
+                <div class="match-intro-text">
+                    <h2>Data Matching Designed by Data & AI Experts</h2>
+                    <div class="match-intro-desc">
+                        <p>At DataKö, we are not generalist recruiters. We connect companies with highly qualified
+                            experts thanks to a precise technical approach and fine understanding of your issues.</p>
+                    </div>
+
+                    <p style="margin-bottom: 24px; color: var(--text-secondary);">Our Difference:</p>
+
+                    <ul class="match-intro-list">
+                        <li>Data & AI specialization only</li>
+                        <li>Profiles pre-qualified technically and personally</li>
+                        <li>Fast start, no friction</li>
+                    </ul>
+                </div>
+
+                <div class="match-visual">
+                    <!-- Abstract visual created via CSS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Companies -->
+    <section class="section bg-secondary matching-enterprises">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
+                <div class="matching-img-container" style="flex: 1; min-width: 300px;">
+                    <img src="../images/matching_entreprises.png" alt="Matching DataKö - Entreprises"
+                        class="matching-img">
+                </div>
+                <div class="matching-ent-text" style="flex: 1; min-width: 300px;">
+                    <h2>For Companies</h2>
+                    <p>Access a pool of qualified consultants pre-selected by us. Whether for a specific mission or a
+                        long-term project, we find the profile that matches your needs.</p>
+                    <button class="btn btn-primary btn-open-modal" data-open-modal="projectModal"
+                        style="margin-top: 20px; display: inline-flex; align-items: center;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px;">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        Find Talent
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Diagram Section -->
+    <section class="match-process">
+        <div class="container">
+            <div class="match-process-header">
+                <h2>Our Matching Process</h2>
+                <p class="match-subtitle">A simple, structured process designed to guarantee the right match.</p>
+            </div>
+
+            <div class="match-timeline">
+                <!-- Step 1 -->
+                <div class="match-step">
+                    <div class="match-step-circle">
+                        <!-- Icon: Target/Checklist -->
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <div class="match-step-content">
+                        <h3>Your Need</h3>
+                        <p>We discuss with you to precisely understand your context, Data challenges, and expectations.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="match-step">
+                    <div class="match-step-circle">
+                        <!-- Icon: Magnifier -->
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
+                    <div class="match-step-content">
+                        <h3>Selection of the Right Profile</h3>
+                        <p>Our experts analyze your need and identify the most relevant Data profile(s).</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="match-step">
+                    <div class="match-step-circle">
+                        <!-- Icon: User Cards -->
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="4"></line>
+                            <line x1="8" y1="2" x2="8" y2="4"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                    </div>
+                    <div class="match-step-content">
+                        <h3>Presentation of Candidates</h3>
+                        <p>We present one or two profiles max, technically and personally qualified.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="match-step">
+                    <div class="match-step-circle">
+                        <!-- Icon: Rocket -->
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z">
+                            </path>
+                            <path
+                                d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z">
+                            </path>
+                            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+                            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+                        </svg>
+                    </div>
+                    <div class="match-step-content">
+                        <h3>Validation & Kick-off</h3>
+                        <p>After your validation, the mission starts quickly and without friction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Consultants -->
+    <section class="section matching-consultants">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
+                <div class="matching-img-container">
+                    <img src="../images/matching_entreprises.png" alt="Matching DataKö - Consultants"
+                        class="matching-img">
+                </div>
+                <div class="matching-ent-text" style="flex: 1; min-width: 300px;">
+                    <h2>For Consultants</h2>
+                    <p>Join our network of experts and access stimulating missions with prestigious clients. We support
+                        you in your professional development.</p>
+                    <a href="contact.html" class="btn btn-outline" style="margin-top: 20px;">Join the Network</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="../images/logo.png" alt="DataKö" style="height: 150px; margin-bottom: 20px;">
+                    <p>Data & AI Consulting Firm.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="prestations.html">Services</a></li>
+                        <li><a href="formations.html">Training</a></li>
+                        <li><a href="matching.html">Matching</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contact@datakö.com">contact@datakö.com</a></li>
+                        <li>Guinea & France</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 DataKö. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Button & Modal -->
+    <button class="floating-btn" data-open-modal="projectModal">
+        Submit your project
+    </button>
+
+    <!-- Modal -->
+    <div id="projectModal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Fermer">✕</button>
+            <h2 style="margin-bottom: 30px; text-align: center;">Send Us a Message</h2>
+            <div id="contact-form-container">
+                <!-- Form injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.2
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+
+                        // Animate children explicitly if needed, but CSS handles it via parent visibility usually
+                        // Here we attached .is-visible to specific elements or the section
+
+                        const header = entry.target.querySelector('.match-process-header');
+                        if (header) header.classList.add('is-visible');
+
+                        const steps = entry.target.querySelectorAll('.match-step');
+                        steps.forEach((step, index) => {
+                            // Stagger happen via CSS transition-delay
+                            step.classList.add('is-visible');
+                        });
+
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const processSection = document.querySelector('.match-process');
+            if (processSection) {
+                observer.observe(processSection);
+            }
+        });
+    </script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
