@@ -1,0 +1,241 @@
+/* Scoped to Contact Page - Premium Data & AI Consulting Style */
+
+/* Hero Reassurance */
+.hero-reassurance {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.reassurance-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.reassurance-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-blue);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.reassurance-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    color: var(--accent-blue);
+}
+
+.reassurance-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Process Section (How it works) */
+.process-section {
+    padding: 80px 0;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.process-header {
+    max-width: 600px;
+    margin-bottom: 50px;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.process-step {
+    position: relative;
+}
+
+.process-step-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.05);
+    position: absolute;
+    top: -20px;
+    left: -10px;
+    z-index: 0;
+    line-height: 1;
+}
+
+.process-content {
+    position: relative;
+    z-index: 1;
+    padding-top: 20px;
+}
+
+.process-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.process-title::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: var(--accent-blue);
+    border-radius: 50%;
+}
+
+.process-desc {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+/* Contact Form Card */
+.contact-form-card {
+    background: var(--bg-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-form-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-violet));
+}
+
+/* Form Styles Override (targeting injected elements if needed) */
+#contactForm input,
+#contactForm select,
+#contactForm textarea {
+    transition: all 0.3s ease !important;
+}
+
+#contactForm input:focus,
+#contactForm select:focus,
+#contactForm textarea:focus {
+    border-color: var(--accent-blue) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(58, 122, 254, 0.1);
+}
+
+.form-reassurance-text {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    opacity: 0.5;
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.form-reassurance-text svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+}
+
+/* Offices Section Refined */
+.offices-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.office-card {
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-left: 3px solid transparent;
+    /* Accent border */
+    transition: all 0.3s ease;
+}
+
+.office-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    transform: translateX(5px);
+}
+
+.office-card.guinea {
+    border-left-color: var(--accent-blue);
+}
+
+.office-card.france {
+    border-left-color: var(--accent-violet);
+}
+
+.office-card.email {
+    border-left-color: #fff;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.04), transparent);
+}
+
+.office-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.office-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.office-details {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+.office-flag {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .process-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .contact-form-card {
+        padding: 24px;
+    }
+
+    .hero-reassurance {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

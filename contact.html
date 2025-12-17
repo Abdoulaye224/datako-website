@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - DataKö</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/contact.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -26,7 +27,7 @@
                     <li class="nav-item"><a href="formations.html" class="nav-link">Formations</a></li>
                     <li class="nav-item"><a href="matching.html" class="nav-link">Matching</a></li>
                     <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
                 </ul>
                 <div class="hamburger">
                     <span class="bar"></span>
@@ -38,13 +39,87 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" style="padding-bottom: 80px;">
         <div class="container">
             <div class="hero-content">
                 <span class="hero-tag">Contact</span>
                 <h1>Parlons de votre projet</h1>
                 <p>Vous avez un défi data à relever ? Une question sur nos formations ? Notre équipe est à votre écoute.
                 </p>
+
+                <div class="hero-reassurance">
+                    <div class="reassurance-card">
+                        <span class="reassurance-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </span>
+                        Réponse sous 24h-48h
+                    </div>
+                    <div class="reassurance-card">
+                        <span class="reassurance-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                </path>
+                            </svg>
+                        </span>
+                        Présence Europe & Afrique
+                    </div>
+                    <div class="reassurance-card">
+                        <span class="reassurance-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </span>
+                        Accompagnement PME & Grands Comptes
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="process-header">
+                <h2>Comment ça marche ?</h2>
+                <p style="color: var(--text-secondary);">Une démarche simple et structurée pour avancer rapidement.</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="process-step-number">01</div>
+                    <div class="process-content">
+                        <h3 class="process-title">Vous décrivez votre besoin</h3>
+                        <p class="process-desc">Remplissez le formulaire ci-dessous ou écrivez-nous pour nous expliquer
+                            votre contexte et vos enjeux data ou IA.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-number">02</div>
+                    <div class="process-content">
+                        <h3 class="process-title">Nous analysons le contexte</h3>
+                        <p class="process-desc">Notre équipe étudie votre demande et vous recontacte rapidement pour
+                            qualifier vos attentes.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-number">03</div>
+                    <div class="process-content">
+                        <h3 class="process-title">Proposition adaptée</h3>
+                        <p class="process-desc">Nous vous proposons une feuille de route claire, un devis ou un plan de
+                            formation sur mesure.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -55,30 +130,42 @@
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px;">
 
                 <!-- Form -->
-                <div>
-                    <h2 style="margin-bottom: 30px;">Envoyez-nous un message</h2>
+                <div class="contact-form-card">
+                    <h2 style="margin-bottom: 24px;">Envoyez-nous un message</h2>
                     <div id="contact-form-container">
                         <!-- Form injected by JS -->
                     </div>
                 </div>
 
                 <!-- Info -->
-                <div>
-                    <h2 style="margin-bottom: 30px;">Nos Bureaux</h2>
+                <div class="offices-container">
+                    <h2 style="margin-bottom: 24px;">Nos Bureaux</h2>
 
-                    <div style="margin-bottom: 40px;">
-                        <h3 style="color: var(--accent-blue); font-size: 1.4rem;">Guinée</h3>
-                        <p>Conakry, Guinée<br>Afrique de l'Ouest</p>
+                    <div class="office-card guinea">
+                        <div class="office-header">
+                            <span class="office-title">Guinée</span>
+                            <span class="office-flag">🇬🇳</span>
+                        </div>
+                        <p class="office-details">Conakry, Guinée<br>Afrique de l'Ouest</p>
                     </div>
 
-                    <div style="margin-bottom: 40px;">
-                        <h3 style="color: var(--accent-violet); font-size: 1.4rem;">France</h3>
-                        <p>Paris, France<br>Europe</p>
+                    <div class="office-card france">
+                        <div class="office-header">
+                            <span class="office-title">France</span>
+                            <span class="office-flag">🇫🇷</span>
+                        </div>
+                        <p class="office-details">Paris, France<br>Europe</p>
                     </div>
 
-                    <div>
-                        <h3 style="font-size: 1.4rem;">Email</h3>
-                        <p><a href="mailto:contact@datakö.com" style="color: white;">contact@datakö.com</a></p>
+                    <div class="office-card email">
+                        <div class="office-header">
+                            <span class="office-title">Email direct</span>
+                            <span class="office-flag">✉️</span>
+                        </div>
+                        <p class="office-details">
+                            <a href="mailto:contact@datakö.com"
+                                style="color: var(--text-primary); font-weight: 500;">contact@datakö.com</a>
+                        </p>
                     </div>
                 </div>
 
