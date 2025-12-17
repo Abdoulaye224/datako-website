@@ -108,6 +108,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <textarea id="message" name="message" rows="5" placeholder="Votre message" required
                     style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: white;"></textarea>
                 <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Envoyer le message</button>
+                <div class="form-reassurance-text">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    Nous ne partageons jamais vos informations.
+                </div>
             </form>
         `;
         formContainer.innerHTML = contactFormHTML;
