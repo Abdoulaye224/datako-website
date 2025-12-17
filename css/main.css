@@ -208,6 +208,29 @@ p {
     color: var(--accent-blue);
 }
 
+.lang-switch {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    margin-left: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.lang-switch:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+}
+
 /* Hamburger */
 .hamburger {
     display: none;

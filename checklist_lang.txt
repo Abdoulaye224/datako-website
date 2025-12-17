@@ -1,0 +1,35 @@
+/* Language Switcher Styles (Add to css/main.css) */
+.lang-switch {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+.lang-switch:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--accent-blue);
+}
+
+/* JS Logic Plan (js/main.js) */
+/*
+const translations = {
+    fr: {
+        nav: { ... },
+        hero: { ... },
+        process: { ... },
+        form: { ... },
+        offices: { ... }
+    },
+    en: { ... }
+};
+let currentLang = 'fr';
+function initLang() { ... inject button ... applyLang() }
+function toggleLang() { ... switch var ... applyLang() }
+function applyLang() { ... querySelectorAll('[data-i18n]') ... update form injection ... }
+*/
