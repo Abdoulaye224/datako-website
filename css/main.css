@@ -535,3 +535,26 @@ p {
     min-width: 24px;
     /* Prevent shrinking */
 }
+
+
+/* --- Global Contact Form Layout & Responsiveness --- */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+#contactForm input,
+#contactForm select,
+#contactForm textarea {
+    width: 100%;
+    max-width: 100%;
+    /* Prevent overflow */
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
