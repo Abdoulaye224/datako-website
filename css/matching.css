@@ -512,12 +512,12 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     line-height: 0;
     /* Reduce dominance as requested - smaller than the intro visual */
-    flex: 0 0 320px;
-    /* Limits width/grow */
-    width: 320px;
+    flex: 1;
+    /* Allow grow to match reference */
+    width: auto;
     height: 320px;
     /* Smaller square-ish or portrait ratio */
-    min-width: 280px;
+    min-width: 300px;
 }
 
 /* Subtle overlay/dimming for less dominance */
