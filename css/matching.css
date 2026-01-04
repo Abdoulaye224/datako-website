@@ -390,76 +390,115 @@
         padding-bottom: 140px;
     }
 
-    /* Vertical Timeline for Mobile */
+    /* Vertical Timeline for Mobile - Formations Style Mirror */
     .match-timeline {
         display: flex;
         flex-direction: column;
-        gap: 32px;
+        gap: 0;
+        /* Let steps handle spacing via margin */
         align-items: flex-start;
         padding-left: 0;
         margin-left: 0;
         position: relative;
-        /* Context for absolute line */
+        counter-reset: match-step-counter;
+        /* Init counter for numbered steps */
     }
 
-    /* Restore connector line as vertical guiding line */
+    /* Hide the desktop horizontal connector */
     .match-timeline::before {
-        display: block;
+        display: none;
+    }
+
+    /* Segmented Line connecting steps (Stops at last step) */
+    .match-step:not(:last-child)::before {
         content: '';
         position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 31px;
-        /* 32px center - 1px half-width of 2px line */
+        left: 29px;
+        /* Center (30px) - 1px half-width */
+        top: 60px;
+        /* Start at bottom of circle */
+        bottom: -40px;
+        /* Reach next step (margin 40px) */
         width: 2px;
-        background: linear-gradient(to bottom,
-                rgba(58, 122, 254, 0.15),
-                rgba(122, 92, 255, 0.15));
-        z-index: 1;
+        background: rgba(255, 255, 255, 0.1);
+        z-index: 0;
     }
 
+    /* Step Layout - Flexbox like Formations */
     .match-step {
-        display: grid;
-        grid-template-columns: 64px 1fr;
-        column-gap: 14px;
-        /* User requested 14px */
-        align-items: start;
+        display: flex;
+        gap: 20px;
+        /* Formations spacing */
         text-align: left;
         width: 100%;
         padding: 0;
+        margin-bottom: 40px;
+        /* Formations spacing */
         transform: none !important;
         opacity: 1 !important;
         position: relative;
-        z-index: 2;
-        /* Sit above line */
+        z-index: 1;
+        counter-increment: match-step-counter;
+        align-items: flex-start;
+        /* Ensure top alignment */
     }
 
+    /* Circle Indicator - Mimic Formations .step-icon */
     .match-step-circle {
-        grid-column: 1;
         margin: 0;
         flex-shrink: 0;
-        width: 64px;
-        height: 64px;
+        width: 60px;
+        height: 60px;
         position: relative;
-        z-index: 2;
-        background-color: #021a21;
-        /* Match section background to mask line */
+        z-index: 1;
+        background-color: var(--bg-primary);
+        /* Formations background */
+        border: 2px solid var(--accent-blue);
+        /* Formations border */
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: none;
+        /* Reset desktop shadow */
+        grid-column: auto;
+        /* Reset grid */
     }
 
+    /* Hide the Icon SVG */
+    .match-step-circle svg {
+        display: none;
+    }
+
+    /* Show Number instead (1, 2, 3, 4) */
+    .match-step-circle::after {
+        content: counter(match-step-counter);
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 400;
+        /* Formations default font weight */
+    }
+
+    /* Content Resets */
     .match-step-content {
-        grid-column: 2;
+        flex: 1;
+        grid-column: auto;
+        /* Reset grid */
     }
 
     .match-step h3 {
-        margin: 0;
-        line-height: 1.15;
-        font-size: 1.15rem;
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+        line-height: 1.2;
+        color: #fff;
     }
 
     .match-step p {
-        margin: 8px 0 0;
-        line-height: 1.45;
+        margin: 0;
+        line-height: 1.5;
         max-width: 100%;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
     }
 }
 
@@ -473,12 +512,12 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     line-height: 0;
     /* Reduce dominance as requested - smaller than the intro visual */
-    flex: 0 0 320px;
-    /* Limits width/grow */
-    width: 320px;
+    flex: 1;
+    /* Allow grow to match reference */
+    width: auto;
     height: 320px;
     /* Smaller square-ish or portrait ratio */
-    min-width: 280px;
+    min-width: 300px;
 }
 
 /* Subtle overlay/dimming for less dominance */
