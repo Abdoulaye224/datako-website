@@ -515,3 +515,23 @@ p {
     font-size: 0.9rem;
     font-weight: 300;
 }
+
+/* --- Global Modal Reassurance Icon Fix --- */
+.form-reassurance-text {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    opacity: 0.8;
+    margin-top: 24px;
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.form-reassurance-text svg {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    /* Prevent shrinking */
+}
