@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const contactFormHTML = `
             <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contactForm"
                 style="display: flex; flex-direction: column; gap: 20px;">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="form-row">
                     <input type="text" id="prenom" name="prenom" placeholder="${t.ph_firstname}" required
                         style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: white;">
                     <input type="text" id="nom" name="nom" placeholder="${t.ph_lastname}" required
