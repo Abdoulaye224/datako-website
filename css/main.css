@@ -258,6 +258,10 @@ p {
     background: var(--accent-blue);
 }
 
+.floating-btn .btn-icon {
+    display: none;
+}
+
 /* WhatsApp Floating Button */
 .whatsapp-float-btn {
     position: fixed;
@@ -522,8 +526,21 @@ p {
     .floating-btn {
         bottom: 20px;
         right: 20px;
-        padding: 12px 20px;
-        font-size: 0.85rem;
+        padding: 0;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        justify-content: center;
+    }
+
+    .floating-btn .btn-text {
+        display: none;
+    }
+
+    .floating-btn .btn-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .whatsapp-float-btn {
