@@ -4,22 +4,28 @@
 .blog-hero {
     position: relative;
     overflow: hidden;
-    padding-bottom: 80px;
-    /* More breathing room */
+    padding-bottom: 100px;
+    /* Increased breathing room */
+    padding-top: calc(var(--header-height) + 40px);
+    /* Adjust top padding */
+    background: linear-gradient(180deg, var(--bg-primary) 0%, #021a21 100%);
+    /* Subtle gradient */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    /* Visual divider */
 }
 
 /* Glow Effect */
 .hero-glow {
     position: absolute;
-    top: -20%;
-    left: 20%;
-    width: 60%;
-    height: 100%;
-    background: radial-gradient(circle at center, rgba(58, 122, 254, 0.12), transparent 70%);
+    top: -30%;
+    left: 10%;
+    width: 80%;
+    height: 120%;
+    background: radial-gradient(circle at center, rgba(58, 122, 254, 0.08), transparent 60%);
     z-index: 0;
     pointer-events: none;
-    opacity: 0.6;
-    filter: blur(80px);
+    opacity: 0.5;
+    filter: blur(100px);
 }
 
 .hero-relative {
