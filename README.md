@@ -44,8 +44,3 @@ Nous intervenons principalement en **Guinée & en France**, avec une ouverture �
   - SEO
   - multi-langue
   - catégorisation avancée
-
----
-
-## 🗂️ Structure du repository
-
