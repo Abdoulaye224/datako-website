@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Shared Contact Form Component (Bilingual)
+    // Shared Contact Form Component (Bilingual) - Netlify Forms Version
     const formContainer = document.getElementById('contact-form-container');
     if (formContainer) {
         // Translations for form
@@ -167,34 +167,50 @@ document.addEventListener('DOMContentLoaded', () => {
             privacy: "Nous ne partageons jamais vos informations."
         };
 
+        const formName = isEnglish ? 'contact-en' : 'contact-fr';
+
         const contactFormHTML = `
-            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contactForm"
-                style="display: flex; flex-direction: column; gap: 20px;">
-                <div class="form-row">
-                    <input type="text" id="prenom" name="prenom" placeholder="${t.ph_firstname}" required
-                        style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: white;">
-                    <input type="text" id="nom" name="nom" placeholder="${t.ph_lastname}" required
-                        style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: white;">
-                </div>
-                <input type="email" id="email" name="email" placeholder="${t.ph_email}" required
+        <form 
+            name="${formName}" 
+            method="POST" 
+            data-netlify="true" 
+            netlify-honeypot="bot-field"
+            id="contactForm"
+            style="display: flex; flex-direction: column; gap: 20px;">
+            
+            <!-- Champ caché obligatoire pour Netlify -->
+            <input type="hidden" name="form-name" value="${formName}" />
+            
+            <!-- Anti-spam honeypot (masqué) -->
+            <p style="display: none;">
+                <label>Don't fill this out: <input name="bot-field" /></label>
+            </p>
+            
+            <div class="form-row">
+                <input type="text" name="prenom" placeholder="${t.ph_firstname}" required
                     style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: white;">
-                <select id="sujet" name="sujet" required
+                <input type="text" name="nom" placeholder="${t.ph_lastname}" required
                     style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: white;">
-                    <option value="" disabled selected>${t.opt_default}</option>
-                    <option value="consulting" style="color: black;">${t.opt_1}</option>
-                    <option value="formation" style="color: black;">${t.opt_2}</option>
-                    <option value="recrutement" style="color: black;">${t.opt_3}</option>
-                    <option value="autre" style="color: black;">${t.opt_4}</option>
-                </select>
-                <textarea id="message" name="message" rows="5" placeholder="${t.ph_message}" required
-                    style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: white;"></textarea>
-                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">${t.btn}</button>
-                <div class="form-reassurance-text">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                    ${t.privacy}
-                </div>
-            </form>
-        `;
+            </div>
+            <input type="email" name="email" placeholder="${t.ph_email}" required
+                style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: white;">
+            <select name="sujet" required
+                style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: white;">
+                <option value="" disabled selected>${t.opt_default}</option>
+                <option value="consulting" style="color: black;">${t.opt_1}</option>
+                <option value="formation" style="color: black;">${t.opt_2}</option>
+                <option value="recrutement" style="color: black;">${t.opt_3}</option>
+                <option value="autre" style="color: black;">${t.opt_4}</option>
+            </select>
+            <textarea name="message" rows="5" placeholder="${t.ph_message}" required
+                style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: white;"></textarea>
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">${t.btn}</button>
+            <div class="form-reassurance-text">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                ${t.privacy}
+            </div>
+        </form>
+    `;
         formContainer.innerHTML = contactFormHTML;
     }
 
