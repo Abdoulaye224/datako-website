@@ -234,6 +234,19 @@
     </footer>
 
     <script src="../js/main.js"></script>
+    <!-- Hidden form for Netlify Forms detection (build time) -->
+    <form name="contact-en" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="prenom" />
+        <input type="text" name="nom" />
+        <input type="email" name="email" />
+        <select name="sujet">
+            <option value="consulting">Consulting</option>
+            <option value="training">Training</option>
+            <option value="recruitment">Recruitment</option>
+            <option value="other">Other</option>
+        </select>
+        <textarea name="message"></textarea>
+    </form>
 </body>
 
 </html>
