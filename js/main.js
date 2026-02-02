@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const formName = isEnglish ? 'contact-en' : 'contact-fr';
-        const formAction = isEnglish ? './thanks.html' : './merci.html';
+        const formAction = isEnglish ? './thanks' : './merci';
 
         const contactFormHTML = `
         <form 
