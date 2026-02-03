@@ -168,14 +168,14 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const formName = isEnglish ? 'contact-en' : 'contact-fr';
-        // const formAction = isEnglish ? '/en/thanks.html' : '/merci.html';
+        const formAction = isEnglish ? '/en/thanks.html' : '/merci.html';
 
         const contactFormHTML = `
         <form 
             name="${formName}" 
             method="POST" 
             data-netlify="true"
-            action="./merci.html"
+            action="${formAction}"
             netlify-honeypot="bot-field"
             id="contactForm"
             style="display: flex; flex-direction: column; gap: 20px;">
