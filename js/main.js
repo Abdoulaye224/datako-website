@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('datako_lang');
     const currentPath = window.location.pathname;
     const filename = currentPath.split('/').pop() || 'index.html';
-    const WHATSAPP_PHONE = "+224613669659";
+    const WHATSAPP_PHONE = "+224612434545";
     // Auto-Redirect based on preference (only if explicitly saved)
     if (savedLang === 'en' && !isEnglish) {
         // Redirect to EN
